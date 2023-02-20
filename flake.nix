@@ -19,10 +19,11 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = [
-            ./configuration.nix
-            ./users.nix
-            ./home.nix
+            ./system
+            ./users
+            
             home-manager.nixosModules.home-manager
+            ./home
           ];
         };
       };
