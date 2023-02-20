@@ -21,6 +21,7 @@
         enableAutosuggestions = true;
         enableCompletion = true;
         enableSyntaxHighlighting = true;
+        initExtraBeforeCompInit = ''bindkey -v '^?' backward-delete-char'';
       };
 
       bat = {
