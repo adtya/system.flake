@@ -10,6 +10,7 @@
     ./mako.nix
     ./swayidle.nix
     ./swaylock.nix
+    ./kanshi.nix
   ];
 
   home-manager.users.adtya = { pkgs, config, lib, ... }: {
