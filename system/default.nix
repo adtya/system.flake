@@ -68,10 +68,12 @@
     blueman.enable = true;
     fstrim.enable = true;
     fwupd.enable = true;
+    gvfs.enable = true;
     pipewire = {
       enable = true;
       pulse.enable = true;
     };
+    udisks2.enable = true;
     xserver = {
       enable = true;
       displayManager.startx.enable = true;
