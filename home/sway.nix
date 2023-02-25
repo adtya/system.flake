@@ -112,6 +112,45 @@
       { command = "~/.config/scripts/chpaper.sh"; always = true; }
       { command = "systemctl --user restart waybar.service"; always = true; }
     ];
+
+    wayland.windowManager.sway.config.window.commands = [
+      {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "pavucontrol";
+        };
+      }
+      {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "blueman-manager";
+        };
+      }
+      {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "solaar";
+        };
+      }
+      {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "mpv";
+        };
+      }
+      {
+        command = "move container to workspace 2, focus";
+        criteria = {
+          app_id = "firefox";
+        };
+      }
+      {
+        command = "move container to workspace 9, focus";
+        criteria = {
+          class = "Spotify";
+        };
+      }
+    ];
   };
 }
 
