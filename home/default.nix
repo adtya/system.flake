@@ -23,11 +23,12 @@
       discord
       spotify
       _1password-gui
-      # zoom-us
 
-      gnome.nautilus
+      # gnome.nautilus
+      cinnamon.nemo
       gnome.gnome-system-monitor
       evince
+      mpv
 
       brightnessctl
       pavucontrol
