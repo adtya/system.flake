@@ -172,5 +172,8 @@
       };
     }
   ];
+
+  wayland.windowManager.sway.config.gaps.outer = 4;
+  wayland.windowManager.sway.config.gaps.inner = 4;
 }
 
