@@ -3,6 +3,9 @@
 {
   imports = [
     ./hardware.nix
+
+    ./virtualisation.nix
+
     ./gnome-keyring.nix
     ./gtk.nix
     ./swaylock.nix
@@ -96,8 +99,6 @@
   system.stateVersion = "22.11";
 
   time.timeZone = "Asia/Kolkata";
-
-  virtualisation.docker.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
