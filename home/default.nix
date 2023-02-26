@@ -24,8 +24,7 @@
       spotify
       _1password-gui
 
-      # gnome.nautilus
-      cinnamon.nemo
+      gnome.nautilus
       gnome.gnome-system-monitor
       evince
       mpv
