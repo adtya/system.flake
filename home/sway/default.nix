@@ -160,6 +160,12 @@
       };
     }
     {
+      command = "floating enable, focus";
+      criteria = {
+        app_id = "io.github.celluloid_player.Celluloid";
+      };
+    }
+    {
       command = "move container to workspace 2, focus";
       criteria = {
         app_id = "firefox";

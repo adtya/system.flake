@@ -22,7 +22,7 @@
       gnome.nautilus
       gnome.gnome-system-monitor
       evince
-      mpv
+      celluloid
 
       brightnessctl
       pavucontrol
