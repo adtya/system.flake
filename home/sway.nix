@@ -139,6 +139,24 @@
         };
       }
       {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "org.gnome.Nautilus";
+        };
+      }
+      {
+        command = "floating enable, focus";
+        criteria = {
+          app_id = "gnome-system-monitor";
+        };
+      }
+      {
+        command = "floating enable, focus";
+        criteria = {
+          class = "1Password";
+        };
+      }
+      {
         command = "move container to workspace 2, focus";
         criteria = {
           app_id = "firefox";
