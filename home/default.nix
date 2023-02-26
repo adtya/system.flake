@@ -7,22 +7,23 @@
     ./nvim.nix
     ./helix.nix
     ./terminal.nix
-    ./dev.nix
     ./scripts.nix
 
-    #  ./gnome.nix
-    ./sway.nix
+
+    ./sway/swaylock.nix
   ];
 
   home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
   home-manager.users.adtya = { pkgs, ... }: {
-    home.stateVersion = "22.11";
     nixpkgs.config.allowUnfree = true;
 
+    imports = [ ./dev.nix ./sway ];
+
     home.packages = with pkgs; [
-      discord
-      spotify
-      _1password-gui
+      # discord
+      # spotify
+      # _1password-gui
 
       gnome.nautilus
       gnome.gnome-system-monitor
@@ -45,5 +46,7 @@
 
     services.blueman-applet.enable = true;
     xdg.enable = true;
+
+    home.stateVersion = "22.11";
   };
 }

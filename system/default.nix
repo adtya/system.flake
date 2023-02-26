@@ -3,6 +3,8 @@
 {
   imports = [
     ./hardware.nix
+    ./gnome-keyring.nix
+    ./gtk.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -92,6 +94,8 @@
   system.stateVersion = "22.11";
 
   time.timeZone = "Asia/Kolkata";
+
+  virtualisation.docker.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
