@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./nvim.nix
+    ./helix.nix
+  ];
+
   home.packages = with pkgs; [
     ripgrep
 
@@ -26,13 +31,13 @@
       ignores = [ "/.nix" "/.direnv" ];
     };
 
-    # vscode = {
-    #   enable = true;
-    #   extensions = with pkgs.vscode-extensions; [
-    #     dracula-theme.theme-dracula
-    #     ms-azuretools.vscode-docker
-    #     jnoortheen.nix-ide
-    #   ];
-    # };
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+        ms-azuretools.vscode-docker
+        jnoortheen.nix-ide
+      ];
+    };
   };
 }

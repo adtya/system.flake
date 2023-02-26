@@ -5,10 +5,12 @@
     ./hardware.nix
     ./gnome-keyring.nix
     ./gtk.nix
+    ./swaylock.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true;
+  nixpkgs.config.allowUnfree = true;
 
   boot.tmpOnTmpfs = true;
   console.useXkbConfig = true;

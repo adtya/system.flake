@@ -1,29 +1,23 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./tmux.nix
-    ./kitty.nix
-    ./nvim.nix
-    ./helix.nix
-    ./terminal.nix
-    ./scripts.nix
-
-
-    ./sway/swaylock.nix
-  ];
-
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
   home-manager.users.adtya = { pkgs, ... }: {
-    nixpkgs.config.allowUnfree = true;
 
-    imports = [ ./dev.nix ./sway ];
+    imports = [
+      ./sway
+
+      ./dev.nix
+      ./scripts.nix
+      ./kitty.nix
+      ./terminal.nix
+    ];
 
     home.packages = with pkgs; [
-      # discord
-      # spotify
-      # _1password-gui
+      discord
+      spotify
+      _1password-gui
 
       gnome.nautilus
       gnome.gnome-system-monitor

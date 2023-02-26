@@ -5,27 +5,19 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager }@inputs:
-    let
-      pkgs = import nixpkgs {
-        config = { allowUnfree = true; };
-      };
+  outputs = { self, nixpkgs, home-manager }@inputs: {
+    nixosConfigurations = {
+      Skipper = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
+        modules = [
+          ./system
+          ./users
 
-      lib = nixpkgs.lib;
-    in
-    {
-      nixosConfigurations = {
-        Skipper = lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules = [
-            ./system
-            ./users
-            
-            home-manager.nixosModules.home-manager
-            ./home
-          ];
-        };
+          home-manager.nixosModules.home-manager
+          ./home
+        ];
       };
     };
+  };
 }
