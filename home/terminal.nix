@@ -25,11 +25,11 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''bindkey -v '^?' backward-delete-char'';
-      profileExtra = ''
-        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] ; then
-          exec ${pkgs.sway}/bin/sway
-        fi
-      '';
+      #profileExtra = ''
+      #  if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] ; then
+      #    exec ${pkgs.sway}/bin/sway
+      #  fi
+      #'';
     };
 
     bat = {
