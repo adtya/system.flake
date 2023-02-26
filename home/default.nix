@@ -19,7 +19,7 @@
       spotify
       _1password-gui
 
-      gnome.nautilus
+      pantheon.elementary-files
       gnome.gnome-system-monitor
       evince
       celluloid
@@ -40,6 +40,8 @@
 
     services.blueman-applet.enable = true;
     xdg.enable = true;
+    xdg.mime.enable = true;
+    xdg.mimeApps.enable = true;
 
     home.stateVersion = "22.11";
   };

@@ -108,6 +108,7 @@
   wayland.windowManager.sway.config.startup = [
     { command = "~/.config/scripts/chpaper.sh"; always = true; }
     { command = "systemctl --user restart waybar.service"; always = true; }
+    { command = "systemctl --user restart kanshi.service"; always = true; }
   ];
 
   wayland.windowManager.sway.config.window.commands = [
@@ -138,7 +139,7 @@
     {
       command = "floating enable, focus";
       criteria = {
-        app_id = "org.gnome.Nautilus";
+        app_id = "io.elementary.files";
       };
     }
     {
