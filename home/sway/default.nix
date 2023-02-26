@@ -150,6 +150,12 @@
     {
       command = "floating enable, focus";
       criteria = {
+        app_id = "virt-manager";
+      };
+    }
+    {
+      command = "floating enable, focus";
+      criteria = {
         class = "1Password";
       };
     }
