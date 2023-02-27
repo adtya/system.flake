@@ -12,6 +12,8 @@
       ./scripts.nix
       ./kitty.nix
       ./terminal.nix
+
+      ./firefox.nix
     ];
 
     home.packages = with pkgs; [
@@ -27,9 +29,8 @@
       brightnessctl
       pavucontrol
     ];
+
     programs = {
-      firefox.enable = true;
-      librewolf.enable = true;
       gpg = {
         enable = true;
         settings = {
