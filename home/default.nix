@@ -23,6 +23,7 @@
 
       pantheon.elementary-files
       gnome.gnome-system-monitor
+      gnome.eog
       evince
       celluloid
 
