@@ -29,7 +29,7 @@
   };
 
   swapDevices = [
-    { evice = "/dev/system/swap"; }
+    { device = "/dev/system/swap"; }
   ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
