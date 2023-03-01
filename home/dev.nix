@@ -15,7 +15,11 @@
     nixpkgs-fmt
   ];
   programs = {
-    gh.enable = true;
+    gh = {
+      enable = true;
+      settings.git_protocol = "ssh";
+      extensions = [ pkgs.gh-dash ];
+    };
     git = {
       enable = true;
       diff-so-fancy = {
