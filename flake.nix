@@ -11,6 +11,8 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
+          { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
+
           ./system
           ./users
 
