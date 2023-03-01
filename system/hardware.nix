@@ -3,28 +3,33 @@
 {
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-label/NIXSYSTEM";
+      device = "/dev/system/root";
       fsType = "btrfs";
       options = [ "subvol=/@" "compress-force=zstd" ];
     };
+    "/nix" = {
+      device = "/dev/system/root";
+      fsType = "btrfs";
+      options = [ "subvol=/@nix" "compress-force=zstd" ];
+    };
     "/mnt/data" = {
-      device = "/dev/disk/by-label/NIXSYSTEM";
+      device = "/dev/system/root";
       fsType = "btrfs";
       options = [ "subvol=/@data" "compress-force=zstd" ];
     };
     "/mnt/system" = {
-      device = "/dev/disk/by-label/NIXSYSTEM";
+      device = "/dev/system/root";
       fsType = "btrfs";
       options = [ "subvol=/" "compress-force=zstd" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-label/NIXESP";
+      device = "/dev/disk/by-partlabel/BOOT";
       fsType = "vfat";
     };
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-label/NIXSWAP"; }
+    { evice = "/dev/system/swap"; }
   ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
@@ -44,6 +49,14 @@
     '';
     extraModulePackages = [ ];
     initrd = {
+      luks.devices = {
+        crypt = {
+          allowDiscards = true;
+          bypassWorkqueues = true;
+          device = "/dev/disk/by-partlabel/SYSTEM";
+          preLVM = true;
+        };
+      };
       availableKernelModules = [
         "xhci_pci"
         "thunderbolt"
