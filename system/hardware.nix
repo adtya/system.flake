@@ -1,8 +1,6 @@
 { lib, pkgs, config, ... }:
 
 {
-  imports = [ ];
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXSYSTEM";
