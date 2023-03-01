@@ -14,11 +14,12 @@
       ./terminal.nix
 
       ./firefox.nix
+
+      ./media.nix
     ];
 
     home.packages = with pkgs; [
       discord
-      spotify
       _1password-gui
 
       pantheon.elementary-files
