@@ -36,8 +36,6 @@
   };
 
   hardware.bluetooth.enable = true;
-  hardware.logitech.wireless.enable = true;
-  hardware.logitech.wireless.enableGraphical = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
