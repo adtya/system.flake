@@ -27,6 +27,7 @@
       gnome.eog
       evince
       celluloid
+      gparted
 
       brightnessctl
       pavucontrol
