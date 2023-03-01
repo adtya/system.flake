@@ -49,7 +49,7 @@
   networking.useDHCP = lib.mkDefault false;
 
   environment.systemPackages = with pkgs; [
-    xdg-user-dirs
+    xorg.xhost
   ];
 
   programs.git = {

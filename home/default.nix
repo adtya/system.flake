@@ -31,6 +31,8 @@
 
       brightnessctl
       pavucontrol
+
+      xdg-user-dirs
     ];
 
     programs = {
