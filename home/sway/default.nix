@@ -139,6 +139,12 @@
     {
       command = "floating enable, focus";
       criteria = {
+        app_id = "eog";
+      };
+    }
+    {
+      command = "floating enable, focus";
+      criteria = {
         app_id = "io.elementary.files";
       };
     }
