@@ -24,6 +24,7 @@
       "zenMode.fullScreen" = false;
       "zenMode.hideLineNumbers" = false;
       "zenMode.hideStatusBar" = false;
+      "zenMode.centerLayout" = false;
       "explorer.autoReveal" = true;
       "explorer.openEditors.visible" = 0;
       "editor.minimap.enabled" = true;
