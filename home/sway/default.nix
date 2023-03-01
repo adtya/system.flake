@@ -101,8 +101,8 @@
       "XF86AudioRaiseVolume" = "exec ~/.config/scripts/volume_up.sh";
       "XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
 
-      "print" = ''exec ${pkgs.grim}/bin/grim "''$(${pkgs.xdg-user-dirs}/bin/xdg-usr-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
-      "Shift+print" = ''exec ${pkgs.grim}/bin/grim -g "''$(${pkgs.scrot}/bin/scrot)" ''$(${pkgs.xdg-user-dirs}/bin/xdg-usr-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
+      "print" = ''exec ${pkgs.grim}/bin/grim "''$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
+      "Shift+print" = ''exec ${pkgs.grim}/bin/grim -g "''$(${pkgs.slurp}/bin/slurp)" "''$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
     };
 
   wayland.windowManager.sway.config.startup = [
