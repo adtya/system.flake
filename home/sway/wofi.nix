@@ -1,19 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi-wayland.override { symlink-dmenu = true; };
-    theme = ./rofi/dracula.rasi;
-    extraConfig = {
-      modi = "drun,run";
-      font = "FiraCode Nerd Font 16";
-      show-icons = true;
-      terminal = "kitty";
-      icon-theme = "Newaita-dark";
-      sort = false;
-    };
-  };
   home.packages = with pkgs; [
     wofi
   ];
