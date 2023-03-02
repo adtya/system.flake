@@ -18,7 +18,7 @@
     gh = {
       enable = true;
       settings.git_protocol = "ssh";
-      extensions = [ pkgs.gh-dash ];
+      extensions = [ pkgs.gh-dash pkgs.gh-eco ];
     };
     git = {
       enable = true;
