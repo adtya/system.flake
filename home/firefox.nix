@@ -3,44 +3,76 @@
   programs = {
     firefox = {
       enable = true;
+      package =
+        (pkgs.firefox.override {
+          extraPolicies = {
+            DontCheckDefaultBrowser = true;
+            DisablePocket = true;
+            DisableTelemetry = true;
+            DisplayBookmarksToolbar = "always";
+            EnableTrackingProtection = {
+              "Value" = true;
+              "Locked" = true;
+              "Cryptomining" = true;
+              "Fingerprinting" = true;
+            };
+            FirefoxHome = {
+              "Search" = true;
+              "TopSites" = false;
+              "SponsoredTopSites" = false;
+              "Highlights" = false;
+              "Pocket" = false;
+              "SponsoredPocket" = false;
+              "Snippets" = false;
+              "Locked" = true;
+            };
+            NoDefaultBookmarks = true;
+            OfferToSaveLogins = false;
+            SearchSuggestEnabled = false;
+            StartDownloadsInTempDirectory = true;
+            OverrideFirstRunPage = "";
+            OverridePostUpdatePage = "";
+            ExtensionSettings = {
+              "{b743f56d-1cc1-4048-8ba6-f9c2ab7aa54d}" = {
+                "allowed_types" = "theme";
+                "installation_mode" = "force_installed";
+                "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/dracula-dark-colorscheme/latest.xpi";
+              };
+              "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
+                "allowed_types" = "extension";
+                "installation_mode" = "force_installed";
+                "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi";
+              };
+            };
+            Preferences = {
+              "browser.crashReports.unsubmittedCheck.autoSubmit2" = { Value = false; Status = "locked"; };
+              "browser.selfsupport.url" = { Value = ""; Status = "locked"; };
+              "browser.aboutConfig.showWarning" = { Value = false; Status = "locked"; };
+              "browser.aboutHomeSnippets.updateUrl" = { Value = ""; Status = "locked"; };
+              "browser.startup.homepage_override.mstone" = { Value = "ignore"; Status = "locked"; };
+              "browser.startup.homepage_override.buildID" = { Value = ""; Status = "locked"; };
+              "browser.tabs.firefox-view" = { Value = false; Status = "locked"; };
+              "dom.event.contextmenu.enabled" = { Value = false; Status = "locked"; };
+              "dom.event.clipboardevents.enabled" = { Value = false; Status = "locked"; };
+              "dom.security.https_only_mode" = { Value = true; Status = "locked"; };
+              "extensions.htmlaboutaddons.recommendations.enabled" = { Value = false; Status = "locked"; };
+              "extensions.recommendations.themeRecommendationUrl" = { Value = ""; Status = "locked"; };
+              "network.IDN_show_punycode" = { Value = true; Status = "locked"; };
+            };
+          };
+        });
       profiles.default = {
         id = 0;
         name = "Default";
         isDefault = true;
         settings = {
-          "browser.selfsupport.url" = "";
-          "browser.aboutConfig.showWarning" = false;
-          "browser.aboutHomeSnippets.updateUrl" = "";
-          "browser.newtabpage.activity-stream.asrouter.providers.snippets" = "";
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-          "browser.newtabpage.activity-stream.feeds.topsites" = false;
-          "browser.newtabpage.activity-stream.default.sites" = "";
-          "browser.newtabpage.activity-stream.discoverystream.config" = "";
-          "browser.newtabpage.activity-stream.discoverystream.enabled" = false;
-          "browser.newtabpage.activity-stream.discoverystream.endpoints" = "";
-          "browser.newtabpage.activity-stream.showSponsored" = false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-          "browser.startup.homepage_override.mstone" = "ignore";
-          "browser.startup.homepage_override.buildID" = "";
-          "browser.tabs.firefox-view" = false;
-          "browser.toolbars.bookmarks.visibility" = "always";
-          "browser.urlbar.suggest.topsites" = false;
-          "dom.event.contextmenu.enabled" = false;
-          "dom.event.clipboardevents.enabled" = false;
-          "extensions.pocket.enabled" = false;
-          "extensions.pocket.showHome" = false;
-          "network.IDN_show_punycode" = true;
+          "app.shield.optoutstudies.enabled" = false;
+          "privacy.donottrackheader.enabled" = true;
           "privacy.firstparty.isolate" = true;
-          "privacy.trackingprotection.enabled" = true;
-          "services.sync.prefs.sync.browser.startup.homepage" = false;
           "startup.homepage_welcome_url" = "";
           "startup.homepage_welcome_url.additional" = "";
           "startup.homepage_override_url" = "";
         };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          dracula-dark-colorscheme
-          onepassword-password-manager
-        ];
       };
     };
     librewolf.enable = true;
