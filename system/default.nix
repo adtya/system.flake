@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware.nix
+    ./secureboot.nix
 
     ./virtualisation.nix
 
