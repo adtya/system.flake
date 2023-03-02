@@ -7,30 +7,24 @@
 
     imports = [
       ./sway
-
       ./dev.nix
       ./scripts.nix
       ./kitty.nix
       ./terminal.nix
-
       ./firefox.nix
-
       ./media.nix
     ];
 
     home.packages = with pkgs; [
-      discord
       _1password-gui
-
-      pantheon.elementary-files
-      gnome.gnome-system-monitor
-      gnome.eog
-      evince
-      celluloid
-
       brightnessctl
+      celluloid
+      discord
+      evince
+      gnome.eog
+      gnome.gnome-system-monitor
+      pantheon.elementary-files
       pavucontrol
-
       xdg-user-dirs
     ];
 

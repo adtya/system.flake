@@ -4,9 +4,7 @@
   imports = [
     ./hardware.nix
     ./secureboot.nix
-
     ./virtualisation.nix
-
     ./gnome-keyring.nix
     ./gtk.nix
     ./swaylock.nix
