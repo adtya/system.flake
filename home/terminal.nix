@@ -11,6 +11,13 @@
       enable = true;
       nix-direnv.enable = true;
     };
+    exa = {
+      enable = true;
+      enableAliases = true;
+      extraOptions = [ "--group-directories-first" ];
+      git = true;
+      icons = true;
+    };
     starship = {
       enable = true;
       settings = {
