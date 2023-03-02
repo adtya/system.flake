@@ -12,11 +12,6 @@
       fsType = "btrfs";
       options = [ "subvol=/@nix" "compress-force=zstd" ];
     };
-    "/mnt/data" = {
-      device = "/dev/system/root";
-      fsType = "btrfs";
-      options = [ "subvol=/@data" "compress-force=zstd" ];
-    };
     "/mnt/system" = {
       device = "/dev/system/root";
       fsType = "btrfs";
