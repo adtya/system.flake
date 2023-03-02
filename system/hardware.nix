@@ -74,7 +74,6 @@
     kernelModules = [ "kvm-intel" ];
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot.enable = true;
     };
     plymouth.enable = true;
     bootspec.enable = true;
