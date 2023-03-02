@@ -37,6 +37,9 @@
       #    exec ${pkgs.sway}/bin/sway
       #  fi
       #'';
+      shellAliases = {
+        cat = "bat";
+      };
     };
 
     bat = {
