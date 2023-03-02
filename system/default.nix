@@ -49,10 +49,6 @@
   networking.networkmanager.enable = true;
   networking.useDHCP = lib.mkDefault false;
 
-  environment.systemPackages = with pkgs; [
-    xorg.xhost
-  ];
-
   programs.git = {
     enable = true;
   };
