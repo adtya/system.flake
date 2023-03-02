@@ -10,22 +10,29 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur.url = github:nix-community/NUR;
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote }@inputs: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nur }@inputs: {
     nixosConfigurations = {
       Skipper = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [
-          { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
-          home-manager.nixosModules.home-manager
-          lanzaboote.nixosModules.lanzaboote
+        modules =
+          [
+            {
+              system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+              nixpkgs.overlays = [ nur.overlay ];
+            }
 
-          ./system
-          ./users
-          ./home
-        ];
+            home-manager.nixosModules.home-manager
+            lanzaboote.nixosModules.lanzaboote
+
+            ./system
+            ./users
+            ./home
+          ];
       };
     };
   };
