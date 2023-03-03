@@ -68,6 +68,7 @@
         isDefault = true;
         settings = {
           "app.shield.optoutstudies.enabled" = false;
+          "identity.fxaccounts.account.device.name" = "Skipper";
           "privacy.donottrackheader.enabled" = true;
           "privacy.firstparty.isolate" = true;
           "startup.homepage_welcome_url" = "";
