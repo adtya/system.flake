@@ -17,9 +17,10 @@
   ];
 
   wayland.windowManager.sway.enable = true;
-  wayland.windowManager.sway.package = pkgs.sway;
+  #  wayland.windowManager.sway.package = pkgs.sway;
   wayland.windowManager.sway.config.modifier = "Mod4";
   wayland.windowManager.sway.config.bars = [ ];
+  wayland.windowManager.sway.xwayland = true;
   wayland.windowManager.sway.config.fonts = {
     names = [ "FiraCode Nerd Font Mono" ];
     size = 11.0;

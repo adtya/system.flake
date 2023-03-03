@@ -34,6 +34,11 @@
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+  };
+
   i18n = {
     defaultLocale = "en_IN";
     extraLocaleSettings = {
@@ -69,6 +74,8 @@
     enable = true;
   };
 
+  programs.xwayland.enable = true;
+
   security.polkit.enable = true;
   security.sudo.wheelNeedsPassword = true;
 
@@ -84,17 +91,6 @@
       pulse.enable = true;
     };
     udisks2.enable = true;
-    xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
-      videoDrivers = [ "modesetting" ];
-      libinput.enable = true;
-      excludePackages = with pkgs; [
-        xterm
-      ];
-      layout = "in";
-      xkbVariant = "eng";
-    };
   };
 
   sound.enable = true;
