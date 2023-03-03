@@ -1,6 +1,7 @@
 { ... }:
 {
   environment.persistence."/persist/system" = {
+    hideMounts = true;
     directories = [
       "/etc/NetworkManager/system-connections"
 
