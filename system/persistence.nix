@@ -6,8 +6,6 @@
       "/etc/NetworkManager/system-connections"
       "/etc/secureboot"
 
-      "/var/cache/powertop"
-
       "/var/lib/docker"
       "/var/lib/libvirt"
 

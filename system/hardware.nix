@@ -35,7 +35,6 @@
   boot.resumeDevice = "/dev/system/swap";
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  powerManagement.powertop.enable = true;
 
   hardware.opengl = {
     enable = true;
