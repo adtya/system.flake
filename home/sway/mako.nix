@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  programs.mako.enable = true;
-  programs.mako.extraConfig = ''
+  services.mako.enable = true;
+  services.mako.extraConfig = ''
     font=FiraCode Nerd Font 11
     margin=20
     border-size=3
