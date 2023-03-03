@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 
+  boot.consoleLogLevel = 3;
   boot.kernelParams = [ "quiet" ];
   boot.plymouth = {
     enable = true;
