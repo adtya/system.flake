@@ -4,6 +4,7 @@
     hideMounts = true;
     directories = [
       "/etc/NetworkManager/system-connections"
+      "/etc/secureboot"
 
       "/var/cache/powertop"
 

@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.file.".local/share/wallpapers".source = builtins.fetchGit {
+  home.file.".local/share/wallpapers".source = pkgs.fetchgit {
     url = "https://github.com/catppuccin/wallpapers.git";
-    ref = "main";
     rev = "0cea4a28451851a637762dec07ec4fb2bfebc421";
+    hash = "sha256-B2ncT2qPc0inHHcO1BAZW5of+K0sIdtPcdpqcPUbKBo=";
   };
 
   home.file.".config/scripts/chpaper.sh" = {
