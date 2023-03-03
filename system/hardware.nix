@@ -27,6 +27,8 @@
     { device = "/dev/system/swap"; }
   ];
 
+  boot.resumeDevice = "/dev/system/swap";
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   hardware.opengl = {
