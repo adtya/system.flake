@@ -70,8 +70,6 @@
     loader = {
       efi.canTouchEfiVariables = true;
     };
-    plymouth.enable = true;
-    bootspec.enable = true;
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

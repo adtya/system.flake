@@ -28,7 +28,7 @@
           [
             {
               system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-              nixpkgs.overlays = [ nur.overlay ];
+              nixpkgs.overlays = [ nur.overlay (import ./packages) ];
             }
 
             home-manager.nixosModules.home-manager

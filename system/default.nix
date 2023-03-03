@@ -8,6 +8,7 @@
     ./gnome-keyring.nix
     ./gtk.nix
     ./swaylock.nix
+    ./plymouth
   ];
 
   nix.settings.substituters = [

@@ -1,11 +1,12 @@
 { lib, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
+  boot.bootspec.enable = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  environment.systemPackages = with pkgs; [
+    sbctl
+  ];
 }
