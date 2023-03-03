@@ -4,7 +4,7 @@
   boot.kernelParams = [ "quiet" ];
   boot.plymouth = {
     enable = true;
-    theme = "rog_2";
+    theme = "darth_vader";
     themePackages = [ pkgs.adi1090x-plymouth ];
   };
 }

@@ -21,7 +21,7 @@ pkgs.stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-      cp -r pack_4/rog_2 $out/share/plymouth/themes
-    cat pack_4/rog_2/rog_2.plymouth | sed  "s@\/usr\/@$out\/@" > $out/share/plymouth/themes/rog_2/rog_2.plymouth
+      cp -r pack_2/darth_vader $out/share/plymouth/themes
+    cat pack_2/darth_vader/darth_vader.plymouth | sed  "s@\/usr\/@$out\/@" > $out/share/plymouth/themes/darth_vader/darth_vader.plymouth
   '';
 }
