@@ -2,7 +2,7 @@
 
   boot.plymouth = {
     enable = true;
-    theme = "black_hud";
+    theme = "rog_2";
     themePackages = [ pkgs.adi1090x-plymouth ];
   };
 }
