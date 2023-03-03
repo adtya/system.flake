@@ -29,6 +29,12 @@
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [ pkgs.intel-media-driver ];
+    driSupport = true;
+  };
+
   hardware = {
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;

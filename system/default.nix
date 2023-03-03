@@ -34,11 +34,6 @@
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
-
   i18n = {
     defaultLocale = "en_IN";
     extraLocaleSettings = {
