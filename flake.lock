@@ -166,6 +166,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "impermanence",
         "type": "github"
       }
@@ -193,6 +194,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "lanzaboote",
         "type": "github"
       }
@@ -264,15 +266,16 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1677848441,
-        "narHash": "sha256-6fmYeeiOPLVJwHMWoHaiE4Xf9aCmC3B7VE2ZZNVpIqc=",
+        "lastModified": 1677876371,
+        "narHash": "sha256-/614mgqPw8ZPHoeBRWh7UTSENXIfi2bjMagXctAlFsY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "dd11db8e8c5b06a8b422a71dc94f2d2c4301e4f4",
+        "rev": "ecf0789d737e5a90f5f2326302df6f33b303e210",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "NUR",
         "type": "github"
       }

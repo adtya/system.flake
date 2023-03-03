@@ -10,20 +10,20 @@
     };
 
     impermanence = {
-      url = "github:nix-community/impermanence";
+      url = "github:nix-community/impermanence/master";
     };
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote";
+      url = "github:nix-community/lanzaboote/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur = {
-      url = github:nix-community/NUR;
+      url = github:nix-community/NUR/master;
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur }@inputs: {
     nixosConfigurations = {
       Skipper = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
