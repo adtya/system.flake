@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs = {
+    librewolf.enable = true;
     firefox = {
       enable = true;
       package =
@@ -73,8 +74,11 @@
           "startup.homepage_welcome_url.additional" = "";
           "startup.homepage_override_url" = "";
         };
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          onepassword-password-manager
+          dracula-dark-colorscheme
+        ];
       };
     };
-    librewolf.enable = true;
   };
 }
