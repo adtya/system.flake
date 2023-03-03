@@ -31,6 +31,7 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       enableSyntaxHighlighting = true;
+      initExtra = ''unsetopt BEEP'';
       initExtraBeforeCompInit = ''bindkey -v '^?' backward-delete-char'';
       profileExtra = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] ; then

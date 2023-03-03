@@ -19,5 +19,8 @@
       sync_to_monitor	yes
       shell_integration disabled
     '';
+    settings = {
+      enable_audio_bell = false;
+    };
   };
 }

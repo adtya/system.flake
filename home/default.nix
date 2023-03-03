@@ -3,11 +3,11 @@
 {
   programs.fuse.userAllowOther = true;
 
-  #fileSystems."/home/adtya" = {
-  #  device = "none";
-  #  fsType = "tmpfs";
-  #  options = [ ];
-  #};
+  fileSystems."/home/adtya" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+    options = [ "mode=0755" "uid=1000" "gid=100" ];
+  };
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
