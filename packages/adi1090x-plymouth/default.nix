@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  pack = "pack_1";
-  theme = "abstract_ring";
+  pack = "pack_3";
+  theme = "owl";
 in
 pkgs.stdenv.mkDerivation rec {
   pname = "adi1090x-plymouth";
