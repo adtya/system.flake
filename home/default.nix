@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./impermanence.nix ];
+
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
   home-manager.users.adtya = { pkgs, ... }: {
+    home.homeDirectory = "/home/adtya";
 
     imports = [
       ./sway
@@ -30,6 +33,7 @@
     ];
 
     programs = {
+      home-manager.enable = true;
       gpg = {
         enable = true;
         settings = {

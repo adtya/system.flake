@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence = {
+      url = "github:nix-community/impermanence";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +23,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nur }@inputs: {
+  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur }@inputs: {
     nixosConfigurations = {
       Skipper = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -32,6 +36,8 @@
             }
 
             home-manager.nixosModules.home-manager
+            impermanence.nixosModules.home-manager.impermanence
+            impermanence.nixosModules.impermanence
             lanzaboote.nixosModules.lanzaboote
 
             ./system
