@@ -1,4 +1,8 @@
-{ pkgs }:
+{ pkgs ? import <nixpkgs> { } }:
+let
+  pack = "pack_2";
+  theme = "darth_vader";
+in
 pkgs.stdenv.mkDerivation rec {
   pname = "adi1090x-plymouth";
   version = "0.0.1";
@@ -21,7 +25,10 @@ pkgs.stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-      cp -r pack_2/darth_vader $out/share/plymouth/themes
-    cat pack_2/darth_vader/darth_vader.plymouth | sed  "s@\/usr\/@$out\/@" > $out/share/plymouth/themes/darth_vader/darth_vader.plymouth
+    cp -r ${pack}/${theme} $out/share/plymouth/themes/adi1090x
+    sed -i  "s@\/usr\/@$out\/@" $out/share/plymouth/themes/adi1090x/${theme}.plymouth
+    mv $out/share/plymouth/themes/adi1090x/${theme}.plymouth $out/share/plymouth/themes/adi1090x/adi1090x.plymouth
+		sed -i 's/${theme}/adi1090x/g' $out/share/plymouth/themes/adi1090x/adi1090x.plymouth
+		mv $out/share/plymouth/themes/adi1090x/${theme}.script $out/share/plymouth/themes/adi1090x/adi1090x.script
   '';
 }
