@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 
+  boot.kernelParams = [ "quiet" ];
   boot.plymouth = {
     enable = true;
     theme = "rog_2";
