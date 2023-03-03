@@ -44,6 +44,7 @@
     '';
     extraModulePackages = [ ];
     initrd = {
+      systemd.enable = true;
       luks.devices = {
         crypt = {
           allowDiscards = true;
