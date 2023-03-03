@@ -23,26 +23,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur }@inputs: {
+  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur, ... }@inputs: {
     nixosConfigurations = {
       Skipper = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
-        modules =
-          [
-            {
-              system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-              nixpkgs.overlays = [ nur.overlay (import ./packages) ];
-            }
+        specialArgs = {
+          inherit impermanence inputs;
+        };
+        modules = [
+          {
+            system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+            nixpkgs.overlays = [ nur.overlay (import ./packages) ];
+          }
 
-            home-manager.nixosModules.home-manager
-            impermanence.nixosModules.impermanence
-            lanzaboote.nixosModules.lanzaboote
+          home-manager.nixosModules.home-manager
+          impermanence.nixosModules.impermanence
+          lanzaboote.nixosModules.lanzaboote
 
-            ./system
-            ./users
-            ./home
-          ];
+          ./system
+          ./users
+          ./home
+        ];
       };
     };
   };

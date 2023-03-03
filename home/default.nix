@@ -11,10 +11,10 @@
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
-  home-manager.users.adtya = { impermanence, pkgs, ... }: {
+  home-manager.users.adtya = { pkgs, ... }: {
 
     imports = [
-      ${impermanence}/home-manager.nix
+      "${impermanence}/home-manager.nix"
       ./persistence.nix
 
       ./sway
