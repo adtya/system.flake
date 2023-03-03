@@ -2,12 +2,14 @@
 
 {
   imports = [
-    ./hardware.nix
-    ./secureboot.nix
-    ./virtualisation.nix
     ./gnome-keyring.nix
     ./gtk.nix
+    ./hardware.nix
+    ./persistence.nix
+    ./plymouth
+    ./secureboot.nix
     ./swaylock.nix
+    ./virtualisation.nix
     ./plymouth
   ];
 

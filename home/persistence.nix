@@ -1,6 +1,4 @@
 { ... }: {
-  programs.fuse.userAllowOther = true;
-
   home.persistence."/persist/home" = {
     directories = [
       ".ssh"

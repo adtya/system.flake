@@ -3,7 +3,7 @@
 {
   fileSystems = {
     "/" = {
-      device = "none";
+      device = "tmpfs";
       fsType = "tmpfs";
       options = [ "defaults" "uid=0" "gid=0" "mode=0755" ];
     };

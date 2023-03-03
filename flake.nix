@@ -36,7 +36,6 @@
             }
 
             home-manager.nixosModules.home-manager
-            impermanence.nixosModules.home-manager.impermanence
             impermanence.nixosModules.impermanence
             lanzaboote.nixosModules.lanzaboote
 

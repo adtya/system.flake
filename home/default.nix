@@ -1,14 +1,22 @@
-{ pkgs, ... }:
+{ impermanence, pkgs, ... }:
 
 {
-  imports = [ ./impermanence.nix ];
+  programs.fuse.userAllowOther = true;
+
+  #fileSystems."/home/adtya" = {
+  #  device = "none";
+  #  fsType = "tmpfs";
+  #  options = [ ];
+  #};
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
-  home-manager.users.adtya = { pkgs, ... }: {
-    home.homeDirectory = "/home/adtya";
+  home-manager.users.adtya = { impermanence, pkgs, ... }: {
 
     imports = [
+      ${impermanence}/home-manager.nix
+      ./persistence.nix
+
       ./sway
       ./dev.nix
       ./scripts.nix
@@ -17,6 +25,8 @@
       ./firefox.nix
       ./media.nix
     ];
+
+    home.homeDirectory = "/home/adtya";
 
     home.packages = with pkgs; [
       _1password-gui
