@@ -6,7 +6,7 @@
   fileSystems."/home/adtya" = {
     device = "tmpfs";
     fsType = "tmpfs";
-    options = [ "mode=0755" "uid=1000" "gid=100" ];
+    options = [ "mode=0777" ];
   };
 
   home-manager.useUserPackages = true;
