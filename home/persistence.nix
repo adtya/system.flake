@@ -3,6 +3,7 @@
     allowOther = true;
     directories = [
       ".cache/mesa_shader_cache"
+      ".cache/mozilla"
       ".config/1Password"
       ".config/spotify"
       ".config/spotify-tui"
