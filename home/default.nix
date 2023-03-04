@@ -26,8 +26,6 @@
       ./media.nix
     ];
 
-    home.homeDirectory = "/home/adtya";
-
     home.packages = with pkgs; [
       _1password-gui
       brightnessctl
