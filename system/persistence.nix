@@ -9,6 +9,8 @@
       "/var/lib/bluetooth"
       "/var/lib/docker"
       "/var/lib/libvirt"
+      "/var/lib/nixos"
+      "/var/lib/systemd"
       "/var/log"
     ];
     files = [
