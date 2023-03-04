@@ -25,6 +25,7 @@
 
     files = [
       ".zsh_history"
+      ".config/dconf/user"
       ".config/gh/hosts.yml"
       ".config/user-dirs.dirs"
       ".config/user-dirs.locale"
