@@ -2,15 +2,15 @@
   home.persistence."/persist/home" = {
     allowOther = true;
     directories = [
-      ".ssh"
-      ".gnupg"
-      ".mozilla"
+      ".cache/mesa_shader_cache"
       ".config/1Password"
       ".config/spotify"
       ".config/spotify-tui"
-
+      ".gnupg"
       ".local/share/keyrings"
       ".local/share/atuin"
+      ".mozilla"
+      ".ssh"
 
       "Desktop"
       "Documents"
