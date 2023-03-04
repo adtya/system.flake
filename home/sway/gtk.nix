@@ -17,6 +17,7 @@
     url = "https://github.com/cbrnix/Newaita.git";
     ref = "master";
     rev = "c2b596b097a83be23833dc7bc40b5d07a63315e3";
+    shallow = true;
   };
   gtk.iconTheme = {
     name = "Newaita-dark";
