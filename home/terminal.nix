@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -31,6 +31,11 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       enableSyntaxHighlighting = true;
+      history = {
+        expireDuplicatesFirst = true;
+        extended = true;
+        path = "${config.xdg.dataHome}/zsh/zsh_history";
+      };
       initExtra = ''unsetopt BEEP'';
       initExtraBeforeCompInit = ''bindkey -v '^?' backward-delete-char'';
       profileExtra = ''

@@ -8,8 +8,9 @@
       ".config/spotify"
       ".config/spotify-tui"
       ".gnupg"
-      ".local/share/keyrings"
       ".local/share/atuin"
+      ".local/share/keyrings"
+      ".local/share/zsh"
       ".mozilla"
       ".ssh"
 
@@ -24,7 +25,6 @@
     ];
 
     files = [
-      ".zsh_history"
       ".config/dconf/user"
       ".config/gh/hosts.yml"
       ".config/user-dirs.dirs"
