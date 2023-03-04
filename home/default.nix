@@ -43,7 +43,6 @@
     ];
 
     programs = {
-      home-manager.enable = true;
       gpg = {
         enable = true;
         settings = {
