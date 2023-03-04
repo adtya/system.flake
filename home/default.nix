@@ -14,7 +14,7 @@
   home-manager.users.adtya = { pkgs, ... }: {
 
     imports = [
-      "${impermanence}/home-manager.nix"
+      impermanence.nixosModules.home-manager.impermanence
       ./persistence.nix
 
       ./sway
