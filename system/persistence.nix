@@ -5,10 +5,9 @@
     directories = [
       "/etc/NetworkManager/system-connections"
       "/etc/secureboot"
-
+      "/root/.cache/nix"
       "/var/lib/docker"
       "/var/lib/libvirt"
-
       "/var/log"
     ];
     files = [
