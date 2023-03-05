@@ -27,13 +27,14 @@
   console.useXkbConfig = true;
 
   fonts.fonts = with pkgs; [
+    cantarell-fonts
+    fira-code
+    fira-code-symbols
+    liberation_ttf
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   i18n = {
