@@ -5,6 +5,7 @@
       ".cache/mesa_shader_cache"
       ".cache/mozilla"
       ".config/1Password"
+      ".config/discord"
       ".config/spotify"
       ".config/spotify-tui"
       ".gnupg"
