@@ -29,7 +29,6 @@
     home.packages = with pkgs; [
       _1password-gui
       brightnessctl
-      celluloid
       discord
       evince
       gnome.eog

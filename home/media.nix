@@ -4,6 +4,10 @@
     spotify-tui
     playerctl
   ];
+  programs.mpv = {
+    enable = true;
+    scripts = with pkgs.mpvScripts; [ mpris youtube-quality ];
+  };
   services = {
     spotifyd = {
       enable = true;
