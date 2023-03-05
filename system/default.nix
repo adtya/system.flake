@@ -79,7 +79,7 @@
 
   services = {
     dbus.enable = true;
-    dbus.packages = [ pkgs.gcr ];
+    dbus.packages = [ pkgs.gcr pkgs.gcr_4 ];
     blueman.enable = true;
     fstrim.enable = true;
     fwupd.enable = true;
