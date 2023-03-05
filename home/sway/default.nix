@@ -176,6 +176,12 @@
       };
     }
     {
+      command = "floating enable, focus";
+      criteria = {
+        app_id = "gnome-disks";
+      };
+    }
+    {
       command = "move container to workspace 2, focus";
       criteria = {
         app_id = "firefox";
