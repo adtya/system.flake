@@ -6,6 +6,12 @@
   ];
   programs.mpv = {
     enable = true;
+    package = pkgs.mpv.override { youtubeSupport = true; };
+    config = {
+      hwdec = "auto-safe";
+      gpu-context = "wayland";
+    };
+    defaultProfiles = [ "gpu-hq" ];
     scripts = with pkgs.mpvScripts; [ mpris youtube-quality ];
   };
   services = {
