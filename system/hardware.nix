@@ -35,6 +35,7 @@
   boot.resumeDevice = "/dev/system/swap";
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  services.thermald.enable = true;
 
   hardware.opengl = {
     enable = true;
