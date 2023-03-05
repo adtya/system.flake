@@ -15,7 +15,6 @@
       ".mozilla"
       ".ssh"
 
-      "Desktop"
       "Documents"
       "Downloads"
       "Music"
