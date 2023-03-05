@@ -1,7 +1,7 @@
 { pkgs, pack ? "pack_1", theme ? "cuts", ... }:
 pkgs.stdenv.mkDerivation rec {
   pname = "adi1090x-plymouth";
-  version = "0.0.1";
+  version = "master";
 
   src = builtins.fetchGit {
     url = "https://github.com/adi1090x/plymouth-themes";
