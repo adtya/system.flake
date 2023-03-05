@@ -38,41 +38,41 @@
     gtk = true;
   };
   wayland.windowManager.sway.config.colors = {
-    background = "#282a36";
+    background = "#F8F8F2";
     focused = {
-      background = "#282a36";
-      border = "#8be9fd";
-      childBorder = "#8be9fd";
-      indicator = "#8be9fd";
-      text = "#f8f8f2";
+      background = "#6272A4";
+      border = "#6272A4";
+      childBorder = "#6272A4";
+      indicator = "#6272A4";
+      text = "#F8F8F2";
     };
     focusedInactive = {
-      background = "#282a36";
-      border = "#6272a4";
-      childBorder = "#6272a4";
-      indicator = "#6272a4";
-      text = "#f8f8f2";
+      background = "#44475A";
+      border = "#44475A";
+      childBorder = "#44475A";
+      indicator = "#44475A";
+      text = "#F8F8F2";
     };
     placeholder = {
-      border = "#f8f8f2";
-      background = "#282a36";
-      childBorder = "#f8f8f2";
-      indicator = "#f8f8f2";
-      text = "#f8f8f2";
+      background = "#282A36";
+      border = "#282A36";
+      childBorder = "#282A36";
+      indicator = "#282A36";
+      text = "#F8F8F2";
     };
     unfocused = {
-      background = "#282a36";
-      border = "#6272a4";
-      childBorder = "#6272a4";
-      indicator = "#6272a4";
-      text = "#6272a4";
+      background = "#282A36";
+      border = "#282A36";
+      childBorder = "#282A36";
+      indicator = "#282A36";
+      text = "#BFBFBF";
     };
     urgent = {
-      background = "#282a36";
-      border = "#ff5555";
-      childBorder = "#ff5555";
-      indicator = "#ff5555";
-      text = "#ff5555";
+      background = "#FF5555";
+      border = "#44475A";
+      childBorder = "#FF5555";
+      indicator = "#FF5555";
+      text = "#F8F8F2";
     };
   };
 
