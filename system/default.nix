@@ -75,7 +75,13 @@
   programs.xwayland.enable = true;
 
   security.polkit.enable = true;
-  security.sudo.wheelNeedsPassword = true;
+  security.sudo = {
+    package = pkgs.sudo.override { withInsults = true; };
+    extraConfig = ''
+      Defaults lecture="never"
+    '';
+    wheelNeedsPassword = true;
+  };
 
   services = {
     dbus.enable = true;
