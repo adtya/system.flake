@@ -1,12 +1,23 @@
 { pkgs, ... }:
-
+let
+  gtkTheme = {
+    name = "Catppuccin-Mocha-Compact-Blue-Dark";
+    package = pkgs.catppuccin-gtk.override {
+      size = "compact";
+      tweaks = [ "rimless" "black" ];
+      variant = "mocha";
+    };
+  };
+in
 {
   gtk.enable = true;
-  gtk.theme = {
-    name = "Dracula";
-    package = pkgs.dracula-theme;
+  gtk.theme = gtkTheme;
+  home.sessionVariables.GTK_THEME = gtkTheme.name;
+  xdg.configFile = {
+    "gtk-4.0/assets".source = "${gtkTheme.package}/share/themes/${gtkTheme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source = "${gtkTheme.package}/share/themes/${gtkTheme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${gtkTheme.package}/share/themes/${gtkTheme.name}/gtk-4.0/gtk-dark.css";
   };
-  home.sessionVariables.GTK_THEME = "Dracula";
 
   gtk.cursorTheme = {
     name = "Bibata-Modern-Classic";

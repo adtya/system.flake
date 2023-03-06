@@ -5,7 +5,7 @@
     enable = true;
     font.package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
     font.name = "FiraCode Nerd Font Mono";
-    theme = "Dracula";
+    theme = "Catppuccin-Mocha";
     extraConfig = ''
       font_size	14
       initial_window_width	100c

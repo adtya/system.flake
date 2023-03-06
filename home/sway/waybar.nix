@@ -3,7 +3,10 @@
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
-  programs.waybar.style = ./waybar/style.css;
+  programs.waybar.style = builtins.fetchurl {
+    url = "https://github.com/catppuccin/waybar/releases/download/v1.0/mocha.css";
+    sha256 = "sha256:15bqhwfli7vsjc8c9i0a8a5jl9nd44wa209pvn2g8danwc6ic8xy";
+  };
   programs.waybar.settings = {
     mainBar = {
       layer = "top";

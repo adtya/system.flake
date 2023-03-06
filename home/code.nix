@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
+      catppuccin.catppuccin-vsc
       ms-azuretools.vscode-docker
       jnoortheen.nix-ide
     ];
@@ -47,7 +47,7 @@
       "terminal.integrated.cursorStyle" = "underline";
       "terminal.integrated.cursorBlinking" = true;
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
-      "workbench.colorTheme" = "Dracula";
+      "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "vs-seti";
       "files.exclude" = {
         "**/node_modules" = true;

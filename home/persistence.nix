@@ -5,6 +5,7 @@
       ".cache/mesa_shader_cache"
       ".cache/mozilla"
       ".config/1Password"
+      ".config/dconf"
       ".config/discord"
       ".config/spotify"
       ".config/spotify-tui"
@@ -27,7 +28,6 @@
     ];
 
     files = [
-      ".config/dconf/user"
       ".config/gh/hosts.yml"
       ".config/user-dirs.dirs"
       ".config/user-dirs.locale"

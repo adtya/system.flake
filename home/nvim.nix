@@ -10,15 +10,14 @@
       {
         plugin = vim-airline;
         config = ''
-          let g:airline_theme='dracula'
+          let g:airline_theme='catppuccin'
           let g:airline#extensions#tabline#enabled=1
           let g:airline#extensions#tabline#formatter='unique_tail_improved'
           let g:airline_powerline_fonts = 1
         '';
       }
       vim-airline-themes
-      dracula-vim
-      rust-vim
+      catppuccin-nvim
     ];
     extraConfig = ''
       set number
@@ -35,7 +34,7 @@
       set list
       set autowrite
       set background=dark
-      colorscheme dracula
+      colorscheme "catppuccin-mocha"
       nmap <C-a> gT
       nmap <C-d> gt
       nmap <C-h> :noh<Return>
