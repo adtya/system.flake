@@ -16,7 +16,7 @@
       ".mozilla"
       ".ssh"
 
-      "system.flake"
+      ".system.flake"
 
       "Documents"
       "Downloads"

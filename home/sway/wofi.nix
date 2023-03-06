@@ -19,7 +19,7 @@
       font-size: 16px;
       font-weight: 400;
     }
-      
+
     #window {
       margin: 0px;
       border: 2px solid;
