@@ -34,10 +34,10 @@
             OverrideFirstRunPage = "";
             OverridePostUpdatePage = "";
             ExtensionSettings = {
-              "{2adf0361-e6d8-4b74-b3bc-3f450e8ebb69}" = {
+              "{b743f56d-1cc1-4048-8ba6-f9c2ab7aa54d}" = {
                 "allowed_types" = "theme";
                 "installation_mode" = "force_installed";
-                "install_url" = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_mocha_blue.xpi";
+                "install_url" = "https://addons.mozilla.org/firefox/downloads/latest/dracula-dark-colorscheme/latest.xpi";
               };
               "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
                 "allowed_types" = "extension";
