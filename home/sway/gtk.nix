@@ -4,6 +4,10 @@ let
     name = "Dracula";
     package = pkgs.dracula-gtk;
   };
+  iconTheme = {
+    package = pkgs.newaita-icons.override { variant = "dark"; panel = "dark"; folder = "bluegray"; };
+    name = "Newaita";
+  };
 in
 {
   gtk.enable = true;
@@ -20,9 +24,9 @@ in
     package = pkgs.bibata-cursors;
   };
 
-  gtk.iconTheme = {
-    package = pkgs.newaita-icons.override { variant = "dark"; panel = "dark"; folder = "bluegray"; };
-    name = "Newaita";
+  gtk.iconTheme = iconTheme;
+  xdg.dataFile = {
+    "icons/${iconTheme.name}".source = "${iconTheme.package}/share/icons/${iconTheme.name}";
   };
 
   gtk.gtk3.extraConfig = {
