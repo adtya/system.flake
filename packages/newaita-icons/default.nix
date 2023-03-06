@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, variant ? "dark", panel ? "dark", folder ? "default" }:
+{ lib, stdenv, fetchFromGitHub, panel ? "dark", folder ? "default" }:
 
 stdenv.mkDerivation {
   pname = "newaita-icons";
@@ -14,11 +14,6 @@ stdenv.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    THEME_DIR=Newaita
-    if [ "${variant}" == "dark" ]; then
-      THEME_DIR=Newaita-dark
-    fi
-
     PANEL_DIR=".DP"
     if [ "${panel}" != "dark" ]; then
       PANEL_DIR=".LP"
@@ -29,14 +24,21 @@ stdenv.mkDerivation {
       FOLDER_DIR=".places-${folder}"
     fi
 
-    mkdir -p $out/share/icons/Newaita
-    cp -ra ''$THEME_DIR/{actions,apps,devices,emblems,mimetypes,icon-theme.cache,index.theme} $out/share/icons/Newaita/
+    mkdir -p $out/share/icons/Newaita{,-dark}
+    cp -ra Newaita/{actions,apps,devices,emblems,mimetypes,icon-theme.cache,index.theme} $out/share/icons/Newaita/
+    cp -ra Newaita-dark/{actions,apps,devices,emblems,mimetypes,icon-theme.cache,index.theme} $out/share/icons/Newaita-dark/
 
-    cp -ra ''$THEME_DIR/''$PANEL_DIR $out/share/icons/Newaita/panel
-    cp -ra ''$THEME_DIR/''$FOLDER_DIR $out/share/icons/Newaita/places
+    cp -ra ''$Newaita/''$PANEL_DIR $out/share/icons/Newaita/panel
+    cp -ra ''$Newaita-dark/''$PANEL_DIR $out/share/icons/Newaita-dark/panel
+
+    cp -ra ''$Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
+    cp -ra ''$Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
 
     ln -s $out/share/icons/Newaita/categories ./apps
+    ln -s $out/share/icons/Newaita-dark/categories ./apps
+
     ln -s $out/share/icons/Newaita/status ./panel
+    ln -s $out/share/icons/Newaita-dark/status ./panel
 
     runHook postInstall
   '';
