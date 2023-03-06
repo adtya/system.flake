@@ -10,10 +10,6 @@ pkgs.stdenv.mkDerivation rec {
     shallow = true;
   };
 
-  buildInputs = [
-    pkgs.git
-  ];
-
   configurePhase = ''
     mkdir -p $out/share/plymouth/themes/
   '';
