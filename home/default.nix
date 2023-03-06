@@ -33,8 +33,8 @@
       evince
       gnome.eog
       gnome.gnome-system-monitor
+      gnome.nautilus
       gnome3.gnome-disk-utility
-      pantheon.elementary-files
       pavucontrol
       xdg-user-dirs
     ];
