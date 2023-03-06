@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation {
   pname = "dracula-gtk";
-  version = "4.0";
+  version = "3.0";
 
   src = fetchFromGitHub {
     owner = "dracula";
