@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
   gtkTheme = {
-    name = "Catppuccin-Mocha-Compact-Blue-Dark";
-    package = pkgs.catppuccin-gtk.override { accents = [ "blue" ]; size = "compact"; tweaks = [ "black" "rimless" ]; variant = "mocha"; };
+    name = "Dracula";
+    package = pkgs.dracula-gtk;
   };
 in
 {
@@ -26,6 +26,7 @@ in
     rev = "c2b596b097a83be23833dc7bc40b5d07a63315e3";
     hash = "sha256-tqtjUy8RjvOu0NaK+iE0R1g7/eqCpmhbdxuNGd/YfSI=";
   };
+
   gtk.iconTheme = {
     package = pkgs.catppuccin-papirus-folders.override { flavor = "mocha"; accent = "blue"; };
     name = "Papirus";
