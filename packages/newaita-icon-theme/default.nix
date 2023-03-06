@@ -34,11 +34,11 @@ stdenv.mkDerivation {
     cp -ra Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
     cp -ra Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
 
-    ln -s $out/share/icons/Newaita/categories ./apps
-    ln -s $out/share/icons/Newaita-dark/categories ./apps
+    ln -s ./apps $out/share/icons/Newaita/categories
+    ln -s ./apps $out/share/icons/Newaita-dark/categories
 
-    ln -s $out/share/icons/Newaita/status ./panel
-    ln -s $out/share/icons/Newaita-dark/status ./panel
+    ln -s ./panel $out/share/icons/Newaita/status
+    ln -s ./panel $out/share/icons/Newaita-dark/status
 
     runHook postInstall
   '';
