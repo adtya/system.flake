@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   gtkTheme = {
     name = "Catppuccin-Mocha-Compact-Blue-Dark";
@@ -31,7 +31,8 @@ in
     shallow = true;
   };
   gtk.iconTheme = {
-    name = "Newaita-dark";
+    package = pkgs.catppuccin-papirus-folders.override { flavor = "mocha"; accent = "blue"; };
+    name = "Papirus";
   };
 
   gtk.gtk3.extraConfig = {
