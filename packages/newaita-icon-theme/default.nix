@@ -28,11 +28,11 @@ stdenv.mkDerivation {
     cp -ra Newaita/{actions,apps,devices,emblems,mimetypes,icon-theme.cache,index.theme} $out/share/icons/Newaita/
     cp -ra Newaita-dark/{actions,apps,devices,emblems,mimetypes,icon-theme.cache,index.theme} $out/share/icons/Newaita-dark/
 
-    cp -ra ''$Newaita/''$PANEL_DIR $out/share/icons/Newaita/panel
-    cp -ra ''$Newaita-dark/''$PANEL_DIR $out/share/icons/Newaita-dark/panel
+    cp -ra Newaita/''$PANEL_DIR $out/share/icons/Newaita/panel
+    cp -ra Newaita-dark/''$PANEL_DIR $out/share/icons/Newaita-dark/panel
 
-    cp -ra ''$Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
-    cp -ra ''$Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
+    cp -ra Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
+    cp -ra Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
 
     ln -s $out/share/icons/Newaita/categories ./apps
     ln -s $out/share/icons/Newaita-dark/categories ./apps
