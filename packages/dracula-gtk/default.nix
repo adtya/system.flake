@@ -19,7 +19,7 @@ stdenv.mkDerivation {
     runHook preInstall
 
     mkdir -p $out/share/themes/Dracula
-    cp -a {assets,cinnamon,gnome-shell,gtk-2.0,gtk-3.0,gtk-3.20,gtk-4.0,index.theme,metacity-1,unity,xfwm4} $out/share/themes/Dracula
+    cp -a * $out/share/themes/Dracula
 
     runHook postInstall
   '';
