@@ -6,8 +6,8 @@ let
   };
 
   iconTheme = {
-    name = "Papirus-Dark";
-    package = pkgs.papirus-icon-theme.override { color = "bluegrey"; };
+    name = "Newaita-dark";
+    package = pkgs.newaita-icon-theme.override { panel = "dark"; folder = "bluegrey"; };
   };
 
   cursorTheme = {
