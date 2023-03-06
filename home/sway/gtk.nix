@@ -4,9 +4,15 @@ let
     name = "Dracula";
     package = pkgs.dracula-gtk;
   };
+
   iconTheme = {
-    package = pkgs.newaita-icons.override { variant = "dark"; panel = "dark"; folder = "bluegray"; };
-    name = "Newaita";
+    name = "Papirus-Dark";
+    package = pkgs.papirus-icon-theme.override { color = "bluegrey"; };
+  };
+
+  cursorTheme = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
   };
 in
 {
@@ -19,15 +25,11 @@ in
     "gtk-4.0/gtk-dark.css".source = "${gtkTheme.package}/share/themes/${gtkTheme.name}/gtk-4.0/gtk-dark.css";
   };
 
-  gtk.cursorTheme = {
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-  };
+  gtk.cursorTheme = cursorTheme;
+  xdg.dataFile."icons/${cursorTheme.name}".source = "${cursorTheme.package}/share/icons/${cursorTheme.name}";
 
   gtk.iconTheme = iconTheme;
-  xdg.dataFile = {
-    "icons/${iconTheme.name}".source = "${iconTheme.package}/share/icons/${iconTheme.name}";
-  };
+  xdg.dataFile."icons/${iconTheme.name}".source = "${iconTheme.package}/share/icons/${iconTheme.name}";
 
   gtk.gtk3.extraConfig = {
     gtk-application-prefer-dark-theme = true;
