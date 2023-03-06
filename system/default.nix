@@ -100,6 +100,7 @@
     fstrim.enable = true;
     fwupd.enable = true;
     gvfs.enable = true;
+    lvm.dmeventd.enable = true;
     pipewire = {
       enable = true;
       pulse.enable = true;
