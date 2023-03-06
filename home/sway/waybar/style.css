@@ -1,14 +1,4 @@
-@define-color background #282a36;
-@define-color foreground #f8f8f2;
-@define-color selection #44475a;
-@define-color unfocused #6272a4;
-@define-color red #ff5555;
-@define-color green #50fa7b;
-@define-color yellow #f1fa8c;
-@define-color cyan #8be9fd;
-@define-color purple #bd93f9;
-@define-color pink #ff79c6;
-@define-color orange #ffb86c;
+@import "colors.css";
 
 * {
     border: none;
@@ -20,12 +10,12 @@
 
 #window {
     padding: 0px 10px;
-    background: @background;
+    background: @base;
 }
 
 window#waybar {
-    background: @background;
-    color: @foreground;
+    background: @base;
+    color: @text;
 }
 
 window#waybar.hidden {
@@ -33,17 +23,17 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-    background: @background;
+    background: @base;
 }
 
 window#waybar.solo {
-    background: @background;
+    background: @base;
 }
 
 #workspaces button {
     padding: 0px 3px;
-    background: @background;
-    color: @foreground;
+    background: @base;
+    color: @text;
 }
 
 #workspaces button.focused {
@@ -51,13 +41,13 @@ window#waybar.solo {
 }
 
 #workspaces button.urgent {
-    background: @background;
+    background: @base;
     color: @red;
 }
 
 #mode {
-    background: @background;
-    border: 3px solid @purple;
+    background: @base;
+    border: 3px solid @lavender;
 }
 
 #clock,
@@ -70,13 +60,13 @@ window#waybar.solo {
 #idle_inhibitor,
 #bluetooth {
     padding: 0 10px;
-    color: @foreground;
-    background-color: @background;
+    color: @text;
+    background-color: @base;
 }
 
 @keyframes blink {
     to {
-        color: @foreground;
+        color: @text;
     }
 }
 
