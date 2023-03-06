@@ -1,8 +1,8 @@
 { lib, stdenv, fetchFromGitHub, panel ? "dark", folder ? "default" }:
 
 stdenv.mkDerivation {
-  pname = "newaita-icons";
-  version = "4.0";
+  pname = "newaita-icon-theme";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "cbrnix";
