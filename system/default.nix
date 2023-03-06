@@ -77,6 +77,12 @@
   programs.xwayland.enable = true;
 
   security.polkit.enable = true;
+  security.tpm2 = {
+    enable = true;
+    abrmd.enable = true;
+    pkcs11.enable = true;
+    tctiEnvironment.enable = true;
+  };
   security.sudo = {
     package = pkgs.sudo.override { withInsults = true; };
     extraConfig = ''
