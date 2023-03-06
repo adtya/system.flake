@@ -6,11 +6,10 @@
     ./gtk.nix
     ./hardware.nix
     ./persistence.nix
-    ./plymouth
+    ./plymouth.nix
     ./secureboot.nix
     ./swaylock.nix
     ./virtualisation.nix
-    ./plymouth
   ];
 
   nix.settings.substituters = [
