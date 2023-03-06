@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
   gtkTheme = {
-    name = "Dracula";
-    package = pkgs.dracula-gtk;
+    name = "Catppuccin-Mocha-Compact-Blue-Dark";
+    package = pkgs.catppuccin-gtk.override { accents = [ "blue" ]; size = "compact"; tweaks = [ "black" "rimless" ]; variant = "mocha"; };
   };
 in
 {
