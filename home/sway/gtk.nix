@@ -7,7 +7,7 @@ let
 
   iconTheme = {
     name = "Newaita-dark";
-    package = pkgs.newaita-icon-theme.override { panel = "dark"; folder = "bluegrey"; };
+    package = pkgs.newaita-icon-theme.override { panel = "dark"; folder = "bluegray"; };
   };
 
   cursorTheme = {
