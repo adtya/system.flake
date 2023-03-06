@@ -20,16 +20,9 @@ in
     package = pkgs.bibata-cursors;
   };
 
-  home.file.".local/share/icons".source = pkgs.fetchFromGitHub {
-    owner = "cbrnix";
-    repo = "Newaita";
-    rev = "c2b596b097a83be23833dc7bc40b5d07a63315e3";
-    hash = "sha256-tqtjUy8RjvOu0NaK+iE0R1g7/eqCpmhbdxuNGd/YfSI=";
-  };
-
   gtk.iconTheme = {
-    package = pkgs.catppuccin-papirus-folders.override { flavor = "mocha"; accent = "blue"; };
-    name = "Papirus";
+    package = pkgs.newaita-icons.override { variant = "dark"; panel = "dark"; folder = "bluegray"; };
+    name = "Newaita";
   };
 
   gtk.gtk3.extraConfig = {
