@@ -10,12 +10,12 @@
 
 #window {
     padding: 0px 10px;
-    background: @base;
+    background: @background;
 }
 
 window#waybar {
-    background: @base;
-    color: @text;
+    background: @background;
+    color: @foreground;
 }
 
 window#waybar.hidden {
@@ -23,17 +23,17 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-    background: @base;
+    background: @background;
 }
 
 window#waybar.solo {
-    background: @base;
+    background: @background;
 }
 
 #workspaces button {
     padding: 0px 3px;
-    background: @base;
-    color: @text;
+    background: @background;
+    color: @foreground;
 }
 
 #workspaces button.focused {
@@ -41,13 +41,13 @@ window#waybar.solo {
 }
 
 #workspaces button.urgent {
-    background: @base;
+    background: @background;
     color: @red;
 }
 
 #mode {
-    background: @base;
-    border: 3px solid @lavender;
+    background: @background;
+    border: 3px solid @purple;
 }
 
 #clock,
@@ -60,13 +60,13 @@ window#waybar.solo {
 #idle_inhibitor,
 #bluetooth {
     padding: 0 10px;
-    color: @text;
-    background-color: @base;
+    color: @foreground;
+    background-color: @background;
 }
 
 @keyframes blink {
     to {
-        color: @text;
+        color: @foreground;
     }
 }
 

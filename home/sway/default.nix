@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./waybar.nix
     ./gnome-keyring.nix
-    ./wallpapers.nix
     ./gtk.nix
-    ./wofi.nix
+    ./kanshi.nix
     ./mako.nix
     ./swayidle.nix
-    ./kanshi.nix
+    ./wallpapers.nix
+    ./waybar
+    ./wofi.nix
   ];
 
   home.packages = with pkgs; [
