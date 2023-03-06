@@ -36,5 +36,8 @@
       };
       ignores = [ "/.nix" "/.direnv" ];
     };
+    lazygit = {
+      enable = true;
+    };
   };
 }
