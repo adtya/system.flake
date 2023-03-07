@@ -12,7 +12,7 @@
       gpu-context = "wayland";
     };
     defaultProfiles = [ "gpu-hq" ];
-    scripts = with pkgs.mpvScripts; [ mpris youtube-quality ];
+    scripts = with pkgs.mpvScripts; [ mpris ];
   };
   services = {
     spotifyd = {
