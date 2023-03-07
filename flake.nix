@@ -17,13 +17,9 @@
       url = "github:nix-community/lanzaboote/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nur = {
-      url = github:nix-community/NUR/master;
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote, nur }@inputs: {
+  outputs = { self, nixpkgs, home-manager, impermanence, lanzaboote }@inputs: {
     nixosConfigurations = {
       Skipper = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -33,7 +29,7 @@
         modules = [
           {
             system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-            nixpkgs.overlays = [ nur.overlay (import ./packages) ];
+            nixpkgs.overlays = [ (import ./packages) ];
           }
 
           home-manager.nixosModules.home-manager
