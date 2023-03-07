@@ -11,6 +11,7 @@
       ".config/spotify-tui"
       ".gnupg"
       ".local/share/atuin"
+      ".local/share/emails"
       ".local/share/keyrings"
       ".local/share/zsh"
       ".mozilla"
