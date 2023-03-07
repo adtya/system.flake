@@ -36,7 +36,6 @@
       gnome3.gnome-disk-utility
       pantheon.elementary-files
       pavucontrol
-      xdg-user-dirs
     ];
 
     programs = {
@@ -52,6 +51,7 @@
     xdg.enable = true;
     xdg.mime.enable = true;
     xdg.mimeApps.enable = true;
+    xdg.userDirs.enable = true;
 
     home.stateVersion = "22.11";
   };

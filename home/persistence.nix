@@ -29,8 +29,6 @@
 
     files = [
       ".config/gh/hosts.yml"
-      ".config/user-dirs.dirs"
-      ".config/user-dirs.locale"
     ];
   };
 }
