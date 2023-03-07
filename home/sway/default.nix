@@ -103,6 +103,10 @@
       "XF86AudioRaiseVolume" = "exec ~/.config/scripts/volume_up.sh";
       "XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
 
+      "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+      "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+      "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+
       "print" = ''exec ${pkgs.grim}/bin/grim "''$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
       "Shift+print" = ''exec ${pkgs.grim}/bin/grim -g "''$(${pkgs.slurp}/bin/slurp)" "''$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots/screenshot-''$(date +%Y-%m-%d-%H-%M-%S).png"'';
     };
