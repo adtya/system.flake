@@ -5,7 +5,6 @@
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
-    configurationLimit = 10;
   };
   environment.systemPackages = with pkgs; [
     sbctl
