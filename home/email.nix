@@ -2,7 +2,12 @@
 {
   programs.mbsync.enable = true;
   programs.msmtp.enable = true;
-  programs.neomutt.enable = true;
+  programs.neomutt = {
+    enable = true;
+    sidebar.enable = true;
+    sort = "reverse-date-received";
+    vimKeys = true;
+  };
   programs.notmuch = {
     enable = true;
     hooks = {
