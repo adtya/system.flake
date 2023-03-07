@@ -19,6 +19,7 @@
 
       ./sway
       ./dev.nix
+      ./email.nix
       ./scripts.nix
       ./kitty.nix
       ./terminal.nix
