@@ -26,10 +26,8 @@ in
   };
 
   gtk.cursorTheme = cursorTheme;
-  xdg.dataFile."icons/${cursorTheme.name}".source = "${cursorTheme.package}/share/icons/${cursorTheme.name}";
 
   gtk.iconTheme = iconTheme;
-  xdg.dataFile."icons/${iconTheme.name}".source = "${iconTheme.package}/share/icons/${iconTheme.name}";
 
   gtk.gtk3.extraConfig = {
     gtk-application-prefer-dark-theme = true;
