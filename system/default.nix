@@ -110,11 +110,11 @@
 
   sound.enable = true;
 
-  system.stateVersion = "22.11";
-
   time.timeZone = "Asia/Kolkata";
 
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  system.stateVersion = "23.05";
 }
