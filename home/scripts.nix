@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.file.".config/scripts/power_menu.sh" = {
+  xdg.configFile."scripts/power_menu.sh" = {
     text = ''
       #!/bin/sh
 
@@ -36,7 +36,7 @@
     executable = true;
   };
 
-  home.file.".config/scripts/volume_up.sh" = {
+  xdg.configFile."scripts/volume_up.sh" = {
     text = ''
       #!/bin/sh
 
@@ -47,7 +47,8 @@
     '';
     executable = true;
   };
-  home.file.".config/scripts/tmux_sessions.sh" = {
+
+  xdg.configFile."scripts/tmux_sessions.sh" = {
     text = ''
       #!/bin/sh
 

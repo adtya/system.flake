@@ -8,7 +8,7 @@
     hash = "sha256-B2ncT2qPc0inHHcO1BAZW5of+K0sIdtPcdpqcPUbKBo=";
   };
 
-  home.file.".config/scripts/chpaper.sh" = {
+  xdg.configFile."scripts/chpaper.sh" = {
     text = ''
       #!/bin/sh
 
