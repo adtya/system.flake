@@ -55,7 +55,7 @@
   hardware.bluetooth.enable = true;
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     extraModprobeConfig = ''
       options hid_apple fnmode=2
     '';
