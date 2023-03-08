@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     celluloid
+    lobster-cli
     spotify
     spotify-tui
     playerctl
