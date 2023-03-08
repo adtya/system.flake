@@ -87,7 +87,7 @@
       modifier = config.wayland.windowManager.sway.config.modifier;
     in
     lib.mkOptionDefault {
-      "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty ${pkgs.tmux}/bin/tmux -u new";
+      "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty ${pkgs.tmux}/bin/tmux new";
       "${modifier}+Shift+Return" = "exec ${pkgs.kitty}/bin/kitty";
       "${modifier}+d" = "exec ${pkgs.wofi}/bin/wofi --show drun";
       "${modifier}+Shift+c" = "reload";
