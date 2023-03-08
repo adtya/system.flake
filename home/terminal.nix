@@ -53,7 +53,7 @@
       '';
       shellAliases = {
         cat = "bat";
-        rebuild_system = "sudo nixos-rebuild --flake /persist/home/.system.flake# --cores 0 --max-jobs 8 switch";
+        rebuild_system = "sudo nixos-rebuild --flake /persist/home/.system.flake# --cores 0 --max-jobs 8";
       };
     };
 
