@@ -11,7 +11,6 @@ stdenv.mkDerivation {
     hash = "sha256-B2ncT2qPc0inHHcO1BAZW5of+K0sIdtPcdpqcPUbKBo=";
   };
 
-
   installPhase = ''
     runHook preInstall
 
