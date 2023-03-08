@@ -7,6 +7,14 @@
 
   programs = {
     atuin.enable = true;
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "dracula";
+        vim_keys = true;
+        update_ms = 1000;
+      };
+    };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
