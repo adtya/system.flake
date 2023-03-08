@@ -4,9 +4,11 @@
     directories = [
       ".cache/mesa_shader_cache"
       ".cache/mozilla"
+      ".cache/nix"
       ".config/1Password"
       ".config/dconf"
       ".config/discord"
+      ".config/lazygit"
       ".config/spotify"
       ".config/spotify-tui"
       ".gnupg"
