@@ -17,14 +17,14 @@
       impermanence.nixosModules.home-manager.impermanence
       ./persistence.nix
 
-      ./sway
       ./dev.nix
       ./email.nix
-      ./scripts.nix
-      ./kitty.nix
-      ./terminal.nix
       ./firefox.nix
+      ./kitty.nix
       ./media.nix
+      ./scripts.nix
+      ./sway
+      ./terminal.nix
       ./virt-manager.nix
     ];
 
@@ -41,6 +41,12 @@
       pantheon.elementary-files
       pavucontrol
     ];
+
+    dconf.settings = {
+      "io/elementary/files/preferences" = {
+        "singleclick-select" = true;
+      };
+    };
 
     programs = {
       gpg = {
