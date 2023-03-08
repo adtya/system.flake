@@ -1,8 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    celluloid
     spotify
     spotify-tui
     playerctl
+    ytfzf
   ];
   programs.mpv = {
     enable = true;
