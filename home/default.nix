@@ -25,6 +25,7 @@
       ./terminal.nix
       ./firefox.nix
       ./media.nix
+      ./virt-manager.nix
     ];
 
     home.packages = with pkgs; [
