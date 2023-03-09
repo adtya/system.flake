@@ -22,6 +22,7 @@
       }
       vim-airline-themes
       vim-fugitive
+      vim-gitgutter
       vim-nix
     ];
     extraConfig = ''
