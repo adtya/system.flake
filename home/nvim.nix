@@ -27,7 +27,6 @@
       vim-nix
     ];
     extraConfig = ''
-
       set number
       set relativenumber
       set noswapfile
@@ -42,11 +41,12 @@
       set list
       set autowrite
       set background=dark
+      set updatetime=100
       colorscheme dracula
+
       nmap <C-a> gT
       nmap <C-d> gt
       nmap <C-h> :noh<Return>
-
       nmap <leader>1 1gt
       nmap <leader>2 2gt
       nmap <leader>3 3gt
