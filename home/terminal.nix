@@ -44,8 +44,10 @@
         extended = true;
         path = "${config.xdg.dataHome}/zsh/zsh_history";
       };
-      initExtra = ''unsetopt BEEP'';
-      initExtraBeforeCompInit = ''bindkey -v '^?' backward-delete-char'';
+      initExtra = ''
+        bindkey -v '^?' backward-delete-char
+        unsetopt BEEP
+      '';
       profileExtra = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] ; then
           exec ${pkgs.sway}/bin/sway
@@ -53,6 +55,11 @@
       '';
       shellAliases = {
         cat = "bat";
+        cp = "cp -v";
+        grep = "grep --color=auto";
+        ln = "ln -v";
+        mv = "mv -v";
+        file = "nix run nixpkgs#file --";
         rebuild_system = "sudo nixos-rebuild --flake /persist/home/.system.flake# --cores 0 --max-jobs 8";
       };
     };
