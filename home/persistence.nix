@@ -15,6 +15,7 @@
       ".local/share/atuin"
       ".local/share/emails"
       ".local/share/keyrings"
+      ".local/share/nix"
       ".local/share/zsh"
       ".mozilla"
       ".ssh"
