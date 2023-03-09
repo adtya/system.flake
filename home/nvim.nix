@@ -11,8 +11,14 @@
     ];
     plugins = with pkgs.vimPlugins; [
       dracula-nvim
-      nvim-lspconfig
-      (nvim-treesitter.withPlugins (plugins: [ plugins.vim plugins.nix ]))
+      {
+        plugin = nvim-lspconfig;
+        type = "lua";
+        config = ''
+          require'lspconfig'.rnix.setup{}
+        '';
+      }
+      (nvim-treesitter.withPlugins (plugins: [ plugins.nix ]))
       nvim-treesitter-context
       nvim-treesitter-refactor
       {
