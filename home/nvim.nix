@@ -21,6 +21,7 @@
         '';
       }
       vim-airline-themes
+      vim-fugitive
       vim-nix
     ];
     extraConfig = ''
