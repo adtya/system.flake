@@ -12,11 +12,7 @@ stdenv.mkDerivation {
   };
 
   installPhase = ''
-    runHook preInstall
-
     mkdir -p $out/share/themes/Dracula
     cp -ra assets cinnamon gnome-shell gtk-2.0 gtk-3.0 gtk-3.20 gtk-4.0 metacity-1 unity xfwm4 index.theme $out/share/themes/Dracula/
-
-    runHook postInstall
   '';
 }

@@ -12,8 +12,6 @@ stdenv.mkDerivation {
   };
 
   installPhase = ''
-    runHook preInstall
-
     PANEL_DIR=".DP"
     if [ "${panel}" != "dark" ]; then
       PANEL_DIR=".LP"
@@ -33,7 +31,5 @@ stdenv.mkDerivation {
 
     cp -ra Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
     cp -ra Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
-
-    runHook postInstall
   '';
 }

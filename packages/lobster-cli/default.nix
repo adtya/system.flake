@@ -14,8 +14,6 @@ stdenv.mkDerivation {
   nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
-    runHook preInstall
-
     mkdir -p $out/bin
     cp lobster.sh $out/bin/lobster
     chmod +x $out/bin/lobster
