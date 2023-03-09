@@ -6,10 +6,9 @@
   ];
 
   home.packages = with pkgs; [
-    ripgrep
-
-    rnix-lsp
+    lazydocker
     nixpkgs-fmt
+    ripgrep
   ];
   programs = {
     gh = {
