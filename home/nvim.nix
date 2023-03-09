@@ -25,6 +25,7 @@
       vim-nix
     ];
     extraConfig = ''
+
       set number
       set relativenumber
       set noswapfile
@@ -39,18 +40,10 @@
       set list
       set autowrite
       set background=dark
-      colorscheme "catppuccin-mocha"
+      colorscheme dracula
       nmap <C-a> gT
       nmap <C-d> gt
       nmap <C-h> :noh<Return>
-      " vim-go
-      " map <C-n> :cnext<CR>
-      " map <C-m> :cprevious<CR>
-      " nnoremap <leader>a :cclose<CR>
-      " autocmd FileType go map <leader>b <Plug>(go-build)
-      " autocmd FileType go map <leader>r <Plug>(go-run)
-      " autocmd FileType go map <leader>f <Plug>(go-def)
-      " autocmd FileType go map <leader>b <Plug>(go-def-pop)
 
       nmap <leader>1 1gt
       nmap <leader>2 2gt
