@@ -21,6 +21,7 @@
         '';
       }
       vim-airline-themes
+      vim-devicons
       vim-fugitive
       vim-gitgutter
       vim-nix
