@@ -44,21 +44,23 @@
       vim-nix
     ];
     extraConfig = ''
-      set number
-      set relativenumber
-      set noswapfile
-      set smartindent
-      set expandtab
-      set tabstop=2
-      set shiftwidth=2
-      set laststatus=2
-      set noshowmode
-      set clipboard+=unnamedplus
-      set wrap
-      set list
       set autowrite
       set background=dark
+      set clipboard+=unnamedplus
+      set expandtab
+      set laststatus=2
+      set list
+      set noshowmode
+      set noswapfile
+      set number
+      set relativenumber
+      set shiftwidth=2
+      set smartindent
+      set tabstop=2
+      set termguicolors
       set updatetime=100
+      set wrap
+
       colorscheme dracula
 
       nmap <C-a> gT
