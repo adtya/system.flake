@@ -40,6 +40,7 @@
       libsecret
       pantheon.elementary-files
       pavucontrol
+      xdg-utils
     ];
 
     dconf.settings = {

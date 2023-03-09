@@ -1,47 +1,29 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, ... }: {
 
-{
   imports = [
+    ./filesystem.nix
     ./gnome-keyring.nix
     ./gtk.nix
     ./hardware.nix
+    ./nix.nix
+    ./packages.nix
     ./persistence.nix
     ./plymouth.nix
     ./secureboot.nix
+    ./services.nix
     ./swaylock.nix
     ./virtualisation.nix
   ];
 
-  nix.settings.substituters = [
-    "https://devenv.cachix.org"
-    "https://nix-community.cachix.org/"
-  ];
-  nix.settings.trusted-public-keys = [
-    "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  ];
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [ "nix-command" "flakes" ];
-  };
-  nixpkgs.config.allowUnfree = true;
-
   boot = {
+    initrd.systemd.enable = true;
+    kernel.sysctl = {
+      "vm.swappiness" = 10;
+    };
     loader.timeout = 0;
-    tmpOnTmpfs = true;
-};
-  console.useXkbConfig = true;
+  };
 
-  fonts.fonts = with pkgs; [
-    cantarell-fonts
-    fira-code
-    fira-code-symbols
-    liberation_ttf
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-  ];
+  console.useXkbConfig = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -60,68 +42,40 @@
     supportedLocales = [ "en_US.UTF-8/UTF-8" ];
   };
 
-  networking.hostName = "Skipper";
-  networking.networkmanager.enable = true;
-  networking.useDHCP = lib.mkDefault false;
-
-  programs.git = {
-    enable = true;
+  networking = {
+    hostName = "Skipper";
+    networkmanager.enable = true;
+    useDHCP = lib.mkDefault false;
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-  };
-  environment.pathsToLink = [ "/share/zsh" ];
-
-  programs.xwayland.enable = true;
-
-  security.polkit.enable = true;
-  security.tpm2 = {
-    enable = true;
-    abrmd.enable = true;
-    pkcs11.enable = true;
-    tctiEnvironment.enable = true;
-  };
-  security.sudo = {
-    package = pkgs.sudo.override { withInsults = true; };
-    extraConfig = ''
-      Defaults lecture="never"
-    '';
-    wheelNeedsPassword = true;
-  };
-
-  services = {
-    blueman.enable = true;
-    dbus = {
+  security = {
+    polkit.enable = true;
+    tpm2 = {
       enable = true;
-      packages = [ pkgs.gcr pkgs.gcr_4 ];
+      abrmd.enable = true;
+      pkcs11.enable = true;
+      tctiEnvironment.enable = true;
     };
-    fstrim.enable = true;
-    fwupd.enable = true;
-    gvfs.enable = true;
-    lvm.dmeventd.enable = true;
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
+    sudo = {
+      package = pkgs.sudo.override { withInsults = true; };
+      extraConfig = ''
+        Defaults lecture="never"
+      '';
+      wheelNeedsPassword = true;
     };
-    power-profiles-daemon.enable = true;
-    udisks2.enable = true;
   };
 
   sound.enable = true;
 
   time.timeZone = "Asia/Kolkata";
 
-  xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg = {
+    portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+  };
 
   system.stateVersion = "23.05";
 }
