@@ -46,6 +46,9 @@
       "io/elementary/files/preferences" = {
         "singleclick-select" = true;
       };
+      "org/gtk/settings/file-chooser" = {
+        "sort-directories-first" = true;
+      };
     };
 
     programs = {
@@ -58,6 +61,7 @@
     };
 
     services.blueman-applet.enable = true;
+
     xdg.enable = true;
     xdg.mime.enable = true;
     xdg.mimeApps.enable = true;
