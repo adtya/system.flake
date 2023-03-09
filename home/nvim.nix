@@ -6,8 +6,13 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withNodeJs = true;
+    withPython3 = true;
+    withRuby = true;
     extraPackages = with pkgs; [
+      gopls
       rnix-lsp
+      tree-sitter
     ];
     plugins = with pkgs.vimPlugins; [
       dracula-nvim
@@ -22,10 +27,11 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
+          require'lspconfig'.gopls.setup{}
           require'lspconfig'.rnix.setup{}
         '';
       }
-      (nvim-treesitter.withPlugins (plugins: [ plugins.nix ]))
+      (nvim-treesitter.withPlugins (plugins: with plugins; [ go nix ]))
       nvim-treesitter-context
       nvim-treesitter-refactor
       {
@@ -41,6 +47,7 @@
       vim-devicons
       vim-fugitive
       vim-gitgutter
+      vim-go
       vim-nix
     ];
     extraConfig = ''
@@ -55,6 +62,7 @@
       set number
       set relativenumber
       set shiftwidth=2
+      set signcolumn=yes
       set smartindent
       set tabstop=2
       set termguicolors
@@ -76,8 +84,6 @@
       nmap <leader>8 8gt
       nmap <leader>9 9gt
       nmap <leader>0 0gt
-      nmap <leader>ce :tabnew $MYVIMRC<Return>
-      nmap <leader>cu :source $MYVIMRC<Return>
     '';
   };
 }
