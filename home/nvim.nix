@@ -12,6 +12,13 @@
     plugins = with pkgs.vimPlugins; [
       dracula-nvim
       {
+        plugin = nvim-lastplace;
+        type = "lua";
+        config = ''
+          require'nvim-lastplace'.setup{}
+        '';
+      }
+      {
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
