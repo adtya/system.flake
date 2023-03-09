@@ -7,6 +7,10 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      dracula-nvim
+      (nvim-treesitter.withPlugins (plugins: [ plugins.vim plugins.nix ]))
+      nvim-treesitter-context
+      nvim-treesitter-refactor
       {
         plugin = vim-airline;
         config = ''
@@ -17,7 +21,7 @@
         '';
       }
       vim-airline-themes
-      dracula-nvim
+      vim-nix
     ];
     extraConfig = ''
       set number
