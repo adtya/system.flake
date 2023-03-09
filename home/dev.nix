@@ -3,9 +3,6 @@
 {
   imports = [
     ./nvim.nix
-    ./helix.nix
-
-    ./code.nix
   ];
 
   home.packages = with pkgs; [
