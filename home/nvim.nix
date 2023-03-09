@@ -6,8 +6,12 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    extraPackages = with pkgs; [
+      rnix-lsp
+    ];
     plugins = with pkgs.vimPlugins; [
       dracula-nvim
+      nvim-lspconfig
       (nvim-treesitter.withPlugins (plugins: [ plugins.vim plugins.nix ]))
       nvim-treesitter-context
       nvim-treesitter-refactor
