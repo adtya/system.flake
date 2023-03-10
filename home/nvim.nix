@@ -10,7 +10,6 @@
     withPython3 = true;
     withRuby = true;
     extraPackages = with pkgs; [
-      gopls
       rnix-lsp
       tree-sitter
     ];
@@ -29,26 +28,29 @@
         config = ''
           require'lspconfig'.gopls.setup{}
           require'lspconfig'.rnix.setup{}
+          require'lspconfig'.rust_analyzer.setup{}
         '';
       }
-      (nvim-treesitter.withPlugins (plugins: with plugins; [ go nix ]))
+      (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
       nvim-treesitter-context
       nvim-treesitter-refactor
       {
-        plugin = vim-airline;
+        plugin = lualine-nvim;
         config = ''
-          let g:airline_theme='term'
-          let g:airline#extensions#tabline#enabled=1
-          let g:airline#extensions#tabline#formatter='unique_tail_improved'
-          let g:airline_powerline_fonts = 1
+          require'lualine'.setup() {
+            options = {
+              icons_enabled = true,
+              theme = 'dracula'
+            }
+          }
         '';
       }
-      vim-airline-themes
       vim-devicons
       vim-fugitive
       vim-gitgutter
       vim-go
       vim-nix
+      rust-vim
     ];
     extraConfig = ''
       set autowrite
