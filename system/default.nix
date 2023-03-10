@@ -18,7 +18,7 @@
   boot = {
     initrd.systemd.enable = true;
     kernel.sysctl = {
-      "vm.swappiness" = 10;
+      "vm.swappiness" = 0;
     };
     loader.timeout = 0;
   };
