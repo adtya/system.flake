@@ -1,8 +1,8 @@
-{ lib, stdenv, fetchFromGitHub }:
+{ lib, stdenvNoCC, fetchFromGitHub }:
 
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   pname = "catppuccin-wallpapers";
-  version = "master";
+  version = "latest";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
@@ -15,4 +15,10 @@ stdenv.mkDerivation {
     mkdir -p $out/share/wallpapers/catppuccin
     find . -type f -regextype egrep -regex ".*\.(jpe?g|png)$" -exec cp {} $out/share/wallpapers/catppuccin/ \;
   '';
+
+  meta = with lib; {
+    description = "Wallpapers to match your Catppuccin setups!";
+    homepage = "https://github.com/catppuccin/wallpapers";
+    license = licenses.mit;
+  };
 }
