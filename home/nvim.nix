@@ -18,11 +18,17 @@
         plugin = bufferline-nvim;
         type = "lua";
         config = ''
-          require("bufferline").setup{}
+          require("bufferline").setup{
+            options = {
+              diagnostics = "nvim_lsp",
+              separator_style = "slant",
+              truncate_names = true
+            }
+          }
         '';
       }
       dracula-nvim
-      { 
+      {
         plugin = git-blame-nvim;
         config = ''
           let g:gitblame_date_format = '%r'
@@ -60,6 +66,7 @@
           }
         '';
       }
+      toggleterm-nvim
       vim-devicons
       vim-fugitive
       vim-gitgutter
