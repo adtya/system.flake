@@ -50,8 +50,9 @@
       nvim-treesitter-refactor
       {
         plugin = lualine-nvim;
+        type = "lua";
         config = ''
-          require'lualine'.setup() {
+          require('lualine').setup {
             options = {
               icons_enabled = true,
               theme = 'dracula'
