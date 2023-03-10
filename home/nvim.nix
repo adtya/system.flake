@@ -33,16 +33,16 @@
         plugin = nvim-lastplace;
         type = "lua";
         config = ''
-          require'nvim-lastplace'.setup{}
+          require('nvim-lastplace').setup{}
         '';
       }
       {
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
-          require'lspconfig'.gopls.setup{}
-          require'lspconfig'.rnix.setup{}
-          require'lspconfig'.rust_analyzer.setup{}
+          require('lspconfig').gopls.setup{}
+          require('lspconfig').rnix.setup{}
+          require('lspconfig').rust_analyzer.setup{}
         '';
       }
       (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
