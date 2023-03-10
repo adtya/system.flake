@@ -14,6 +14,13 @@
       tree-sitter
     ];
     plugins = with pkgs.vimPlugins; [
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = ''
+          require("bufferline").setup{}
+        '';
+      }
       dracula-nvim
       {
         plugin = nvim-lastplace;
