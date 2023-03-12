@@ -26,7 +26,7 @@
       set -g set-titles-string "#W"
       set -g automatic-rename on
       set -g automatic-rename-format '(#{b:pane_current_path}) #{pane_current_command}'
-      set -g status-position bottom
+      set -g status-position top
       set -g status-interval 1
       set -g mouse on
 
