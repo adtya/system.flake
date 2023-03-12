@@ -87,6 +87,13 @@
       }
       toggleterm-nvim
       vim-devicons
+      {
+        plugin = toggleterm-nvim;
+        type = "lua";
+        config = ''
+          require('toggleterm').setup{}
+        '';
+      }
       vim-fugitive
       vim-gitgutter
       vim-go
