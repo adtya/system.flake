@@ -48,6 +48,19 @@
         '';
       }
       {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = ''
+          require('lualine').setup {
+            options = {
+              icons_enabled = true,
+              theme = 'dracula',
+              globalstatus = true
+            }
+          }
+        '';
+      }
+      {
         plugin = nvim-lastplace;
         type = "lua";
         config = ''
@@ -74,18 +87,14 @@
       nvim-treesitter-context
       nvim-treesitter-refactor
       {
-        plugin = lualine-nvim;
+        plugin = nvim-web-devicons;
         type = "lua";
         config = ''
-          require('lualine').setup {
-            options = {
-              icons_enabled = true,
-              theme = 'dracula'
-            }
+          require('nvim-web-devicons').setup {
+            default = true;
           }
         '';
       }
-      vim-devicons
       {
         plugin = toggleterm-nvim;
         type = "lua";
