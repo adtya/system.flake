@@ -20,6 +20,7 @@ in
       ./persistence.nix
 
       ./dev.nix
+      ./downloader.nix
       ./email.nix
       ./firefox.nix
       ./kitty.nix
