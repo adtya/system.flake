@@ -5,8 +5,8 @@
       "forcepoweroff" = false;
     };
     "org/virt-manager/virt-manager/connections" = {
-      "autoconnect" = [ "qemu:///system" "qemu:///session" ];
-      "uris" = [ "qemu:///system" "qemu:///session" ];
+      "autoconnect" = [ "qemu:///system" ];
+      "uris" = [ "qemu:///system" ];
     };
     "org/virt-manager/virt-manager/new-vm" = { "firmware" = "uefi"; };
     "org/virt-manager/virt-manager/stats" = {
