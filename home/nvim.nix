@@ -9,6 +9,10 @@
     withNodeJs = true;
     withPython3 = true;
     withRuby = true;
+    extraLuaConfig = ''
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+    '';
     extraPackages = with pkgs; [
       rnix-lsp
       tree-sitter
