@@ -63,6 +63,13 @@
           require('lspconfig').rust_analyzer.setup{}
         '';
       }
+      {
+        plugin = nvim-tree-lua;
+        type = "lua";
+        config = ''
+          require('nvim-tree').setup()
+        '';
+      }
       (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
       nvim-treesitter-context
       nvim-treesitter-refactor
