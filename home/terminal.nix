@@ -60,6 +60,7 @@
         mv = "mv -v";
         devenv_flake = "nix flake init --template github:cachix/devenv";
         file = "nix run nixpkgs#file --";
+        unzip = "nix run nixpkgs#unzip --";
         rebuild_system = "sudo nixos-rebuild --flake /persist/home/.nixos-config# --cores 0 --max-jobs 8";
       };
     };
