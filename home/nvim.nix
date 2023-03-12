@@ -124,6 +124,7 @@
       nmap <C-d> gt
       nmap <C-h> :noh<Return>
       nmap <leader>` :ToggleTerm<Return>
+      nmap <leader>1 :NvimTreeToggle<Return>
     '';
   };
 }
