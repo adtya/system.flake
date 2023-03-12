@@ -18,9 +18,8 @@
       ".local/share/nix"
       ".local/share/zsh"
       ".mozilla"
+      ".nixos-config"
       ".ssh"
-
-      ".system.flake"
 
       "Documents"
       "Downloads"
