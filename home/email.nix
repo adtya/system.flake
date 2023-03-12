@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  user = import ../users/user.nix;
+in
 {
   programs.mbsync.enable = true;
   programs.msmtp.enable = true;
@@ -16,7 +19,7 @@
   };
   accounts.email.maildirBasePath = "${config.xdg.dataHome}/emails";
   accounts.email.accounts = {
-    "adtya.xyz" = {
+    "${user.primary.emailAddress}" = {
       primary = true;
       mbsync = {
         enable = true;
@@ -25,13 +28,13 @@
       msmtp.enable = true;
       neomutt.enable = true;
       notmuch.enable = true;
-      address = "adtya@adtya.xyz";
+      address = user.primary.emailAddress;
       gpg = {
-        key = "95ea0e6bf507e8ea346ac8740c7f35f4f821290f";
+        key = user.primary.signingKey;
         signByDefault = true;
       };
-      realName = "Adithya Nair";
-      userName = "adtya@123mail.org";
+      realName = user.primary.realName;
+      userName = user.primary.emailUserName;
       passwordCommand = ''${pkgs.libsecret}/bin/secret-tool lookup service primary_email'';
       imap = {
         host = "imap.fastmail.com";

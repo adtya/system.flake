@@ -1,5 +1,7 @@
 { pkgs, ... }:
-
+let
+  user = import ../users/user.nix;
+in
 {
   imports = [
     ./nvim.nix
@@ -22,10 +24,10 @@
       diff-so-fancy = {
         enable = true;
       };
-      userEmail = "adtya@adtya.xyz";
-      userName = "Adithya Nair";
+      userEmail = user.primary.emailAddress;
+      userName = user.primary.realName;
       signing = {
-        key = null;
+        key = user.primary.signingKey;
         signByDefault = true;
       };
       extraConfig = {
