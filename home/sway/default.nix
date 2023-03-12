@@ -199,8 +199,8 @@
     }
   ];
 
-  wayland.windowManager.sway.config.gaps.outer = 4;
-  wayland.windowManager.sway.config.gaps.inner = 4;
+  wayland.windowManager.sway.config.gaps.outer = 2;
+  wayland.windowManager.sway.config.gaps.inner = 2;
   wayland.windowManager.sway.config.window.titlebar = false;
   wayland.windowManager.sway.config.floating.titlebar = false;
 }
