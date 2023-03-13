@@ -22,7 +22,7 @@
   wayland.windowManager.sway.config.bars = [ ];
   wayland.windowManager.sway.xwayland = true;
   wayland.windowManager.sway.config.fonts = {
-    names = [ "FiraCode Nerd Font Mono" ];
+    names = [ "FiraCode Nerd Font" ];
     size = 11.0;
   };
   wayland.windowManager.sway.config.input = {
