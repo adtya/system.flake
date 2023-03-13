@@ -5,7 +5,6 @@
     spotify
     spotify-tui
     playerctl
-    ytfzf
   ];
   programs.mpv = {
     enable = true;
