@@ -20,8 +20,16 @@
       tree-sitter
     ];
     plugins = with pkgs.vimPlugins; [
+      dracula-nvim
       neo-tree-nvim
+      (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
+      nvim-treesitter-context
+      nvim-treesitter-refactor
       telescope-nvim
+      vim-fugitive
+      vim-go
+      vim-nix
+      rust-vim
       {
         plugin = bufferline-nvim;
         type = "lua";
@@ -43,7 +51,6 @@
           }
         '';
       }
-      dracula-nvim
       {
         plugin = git-blame-nvim;
         config = ''
@@ -87,9 +94,6 @@
           require('lspconfig').rust_analyzer.setup{}
         '';
       }
-      (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
-      nvim-treesitter-context
-      nvim-treesitter-refactor
       {
         plugin = nvim-web-devicons;
         type = "lua";
@@ -106,10 +110,6 @@
           require('toggleterm').setup{}
         '';
       }
-      vim-fugitive
-      vim-go
-      vim-nix
-      rust-vim
     ];
     extraConfig = ''
       set autowrite
