@@ -18,6 +18,7 @@
       tree-sitter
     ];
     plugins = with pkgs.vimPlugins; [
+      neo-tree-nvim
       {
         plugin = bufferline-nvim;
         type = "lua";
@@ -26,9 +27,9 @@
             options = {
               offsets = {
                 {
-                  filetype = "NvimTree",
+                  filetype = "neo-tree",
                   text = "File Explorer",
-                  text_align = "left",
+                  text_align = "center",
                   separator = true
                 }
               },
@@ -74,13 +75,6 @@
           require('lspconfig').gopls.setup{}
           require('lspconfig').rnix.setup{}
           require('lspconfig').rust_analyzer.setup{}
-        '';
-      }
-      {
-        plugin = nvim-tree-lua;
-        type = "lua";
-        config = ''
-          require('nvim-tree').setup()
         '';
       }
       (nvim-treesitter.withPlugins (plugins: with plugins; [ bash dockerfile gitcommit gitignore git_rebase go markdown markdown_inline nix rust toml yaml ]))
@@ -133,7 +127,7 @@
       nmap <C-d> gt
       nmap <C-h> :noh<Return>
       nmap <leader>` :ToggleTerm<Return>
-      nmap <leader>1 :NvimTreeToggle<Return>
+      nnoremap <leader>1 :NeoTreeFocusToggle<Return>
     '';
   };
 }
