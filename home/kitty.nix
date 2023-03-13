@@ -16,7 +16,7 @@ in
       font_size	14
       initial_window_width	100c
       initial_window_height	25c
-      window_padding_width	8.0
+      window_padding_width	4.0
       background_opacity	0.98
       cursor_shape	beam
       scrollback_lines	2000
