@@ -14,11 +14,14 @@
       vim.g.loaded_netrwPlugin = 1
     '';
     extraPackages = with pkgs; [
+      fd
+      ripgrep
       rnix-lsp
       tree-sitter
     ];
     plugins = with pkgs.vimPlugins; [
       neo-tree-nvim
+      telescope-nvim
       {
         plugin = bufferline-nvim;
         type = "lua";
@@ -128,6 +131,10 @@
       nmap <C-h> :noh<Return>
       nmap <leader>` :ToggleTerm<Return>
       nnoremap <leader>1 :NeoTreeFocusToggle<Return>
+      nnoremap <leader>ff <cmd>Telescope find_files<cr>
+      nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+      nnoremap <leader>fb <cmd>Telescope buffers<cr>
+      nnoremap <leader>fh <cmd>Telescope help_tags<cr>
     '';
   };
 }
