@@ -3,6 +3,7 @@
     blueman.enable = true;
     dbus = {
       enable = true;
+      apparmor = "enabled";
       packages = [ pkgs.gcr pkgs.gcr_4 ];
     };
     fstrim.enable = true;

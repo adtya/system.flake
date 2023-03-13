@@ -6,6 +6,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/secureboot"
       "/root/.cache/nix"
+      "/var/cache/apparmor"
       "/var/lib/bluetooth"
       "/var/lib/docker"
       "/var/lib/libvirt"

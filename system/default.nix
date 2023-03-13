@@ -49,6 +49,12 @@
   };
 
   security = {
+    apparmor = {
+      enable = true;
+      enableCache = true;
+    };
+    audit.enable = true;
+    auditd.enable = true;
     polkit.enable = true;
     tpm2 = {
       enable = true;
