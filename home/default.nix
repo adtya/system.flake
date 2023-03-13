@@ -23,7 +23,6 @@ in
       ./downloader.nix
       ./email.nix
       ./firefox.nix
-      ./kitty.nix
       ./media.nix
       ./scripts.nix
       ./sway

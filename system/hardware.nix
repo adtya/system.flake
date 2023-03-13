@@ -17,7 +17,7 @@
 
   hardware.sensor.hddtemp = {
     enable = true;
-    drives =  [ "/dev/disk/by-path/pci-0000:01:00.0-nvme-1" ];
+    drives = [ "/dev/disk/by-path/pci-0000:01:00.0-nvme-1" ];
   };
 
   boot.loader = {
