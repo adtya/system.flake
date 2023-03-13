@@ -134,8 +134,8 @@
 
       nmap <C-a> gT
       nmap <C-d> gt
-      nmap <C-h> :noh<Return>
-      nmap <leader>` :ToggleTerm<Return>
+      nnoremap <C-h> :noh<Return>
+      nnoremap <leader>` :ToggleTerm<Return>
       nnoremap <leader>1 :NeoTreeFocusToggle<Return>
       nnoremap <leader>ff <cmd>Telescope find_files<cr>
       nnoremap <leader>fg <cmd>Telescope live_grep<cr>
