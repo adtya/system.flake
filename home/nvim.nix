@@ -52,6 +52,13 @@
         '';
       }
       {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''
+          require('gitsigns').setup()
+        '';
+      }
+      {
         plugin = lualine-nvim;
         type = "lua";
         config = ''
@@ -100,7 +107,6 @@
         '';
       }
       vim-fugitive
-      vim-gitgutter
       vim-go
       vim-nix
       rust-vim
