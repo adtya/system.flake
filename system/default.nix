@@ -20,7 +20,6 @@
     kernel.sysctl = {
       "vm.swappiness" = 0;
     };
-    loader.timeout = 0;
   };
 
   console.useXkbConfig = true;
