@@ -1,4 +1,4 @@
-{ lib, stdenvNoCC, fetchFromGitHub, autoreconfHook, gtk3, gnome, gnome-icon-theme, hicolor-icon-theme, panel ? "dark", folder ? "default" }:
+{ lib, stdenvNoCC, fetchFromGitHub, gtk3, gnome, gnome-icon-theme, hicolor-icon-theme, panel ? "dark", folder ? "default" }:
 
 stdenvNoCC.mkDerivation {
   pname = "newaita-icon-theme";
@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation {
     hash = "sha256-tqtjUy8RjvOu0NaK+iE0R1g7/eqCpmhbdxuNGd/YfSI=";
   };
 
-  nativeBuildInputs = [ autoreconfHook gtk3 ];
+  nativeBuildInputs = [ gtk3 ];
 
   propagatedBuildInputs = [
     gnome.adwaita-icon-theme
@@ -22,6 +22,8 @@ stdenvNoCC.mkDerivation {
   dontDropIconThemeCache = true;
 
   installPhase = ''
+    runHook preInstall
+
     PANEL_DIR=".DP"
     if [ "${panel}" != "dark" ]; then
       PANEL_DIR=".LP"
@@ -38,6 +40,8 @@ stdenvNoCC.mkDerivation {
 
     cp -ra Newaita/''$FOLDER_DIR $out/share/icons/Newaita/places
     cp -ra Newaita-dark/''$FOLDER_DIR $out/share/icons/Newaita-dark/places
+
+    runHook postInstall
   '';
 
   postFixup = "gtk-update-icon-cache $out/share/icons/Newaita{,-dark}";

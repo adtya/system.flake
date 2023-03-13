@@ -12,8 +12,12 @@ stdenvNoCC.mkDerivation {
   };
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/share/wallpapers/catppuccin
     find . -type f -regextype egrep -regex ".*\.(jpe?g|png)$" -exec cp {} $out/share/wallpapers/catppuccin/ \;
+
+    runHook postInstall
   '';
 
   meta = with lib; {
