@@ -8,24 +8,24 @@
       neededForBoot = true;
     };
     "/nix" = {
-      device = "/dev/system/root";
+      device = "/dev/vg0/system";
       fsType = "btrfs";
       options = [ "subvol=/@nix" "compress-force=zstd" ];
       neededForBoot = true;
     };
     "/persist" = {
-      device = "/dev/system/root";
+      device = "/dev/vg0/system";
       fsType = "btrfs";
       options = [ "subvol=/@persist" "compress-force=zstd" ];
       neededForBoot = true;
     };
     "/mnt/system" = {
-      device = "/dev/system/root";
+      device = "/dev/vg0/system";
       fsType = "btrfs";
       options = [ "subvol=/" "compress-force=zstd" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-partlabel/BOOT";
+      device = "/dev/disk/by-partlabel/ESP";
       fsType = "vfat";
     };
   };

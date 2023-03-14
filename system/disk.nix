@@ -1,15 +1,15 @@
 { ... }: {
   boot = {
-    resumeDevice = "/dev/system/swap";
+    resumeDevice = "/dev/vg0/swap";
     initrd.luks.devices = {
-      crypt = {
+      luks0 = {
         allowDiscards = true;
         bypassWorkqueues = true;
-        device = "/dev/disk/by-partlabel/SYSTEM";
+        device = "/dev/disk/by-partlabel/CRYPT";
         preLVM = true;
       };
     };
   };
 
-  swapDevices = [{ device = "/dev/system/swap"; }];
+  swapDevices = [{ device = "/dev/vg0/swap"; }];
 }
