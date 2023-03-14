@@ -7,8 +7,8 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub {
     owner = "dracula";
     repo = "gtk";
-    rev = "v4.0";
-    sha256 = "sha256-7DUT/DfvCSo9GiJzqhqvegNCARB0eGtPQ6oUQG/Uja0=";
+    rev = "df9af5e1ded3d2e266bcd30b3d38ff74c9a1a7aa";
+    hash = "sha256-2lmpEPYxdbRnKgcJ792cuzyOBmOIWhja18q+F3Pxgjs=";
   };
 
   nativeBuildInputs = [ gtk3 ];
