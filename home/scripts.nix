@@ -31,7 +31,7 @@
 
       OPTIONS="Shutdown\nReboot\nHibernate\nLogout"
 
-      chpower "$(printf "%b" "$OPTIONS" | sort | ${pkgs.wofi}/bin/wofi --dmenu -p "Power Menu")"
+      chpower "$(printf "%b" "$OPTIONS" | sort | ${pkgs.rofi-wayland}/bin/rofi -dmenu -p "Power Menu")"
     '';
     executable = true;
   };
@@ -54,7 +54,7 @@
 
       set -eu
 
-      SESSION="$(${pkgs.tmux}/bin/tmux list-sessions -F "(#{session_attached}) #S [#{pane_current_command} in #{pane_current_path}] #{pane_title}" | sort | ${pkgs.wofi}/bin/wofi --dmenu -p "Running TMUX Sessions" | awk '{print $2}')"
+      SESSION="$(${pkgs.tmux}/bin/tmux list-sessions -F "(#{session_attached}) #S [#{pane_current_command} in #{pane_current_path}] #{pane_title}" | sort | ${pkgs.rofi-wayland}/bin/rofi -dmenu -p "Running TMUX Sessions" | awk '{print $2}')"
       case "$SESSION" in
       	"")
       		;;

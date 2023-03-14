@@ -6,10 +6,10 @@
     ./gtk.nix
     ./kanshi.nix
     ./mako.nix
+    ./rofi
     ./swayidle.nix
     ./wallpapers.nix
     ./waybar
-    ./wofi.nix
   ];
 
   home.packages = with pkgs; [
@@ -89,7 +89,7 @@
     lib.mkOptionDefault {
       "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty ${pkgs.tmux}/bin/tmux new";
       "${modifier}+Shift+Return" = "exec ${pkgs.kitty}/bin/kitty";
-      "${modifier}+d" = "exec ${pkgs.wofi}/bin/wofi --show drun";
+      "${modifier}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
       "${modifier}+Shift+c" = "reload";
       "${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -f -i /tmp/lockpaper.jpg";
       "${modifier}+Shift+w" = "exec ~/.config/scripts/chpaper.sh";
